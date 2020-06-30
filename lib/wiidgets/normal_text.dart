@@ -1,0 +1,29 @@
+import 'package:bookingapp/utility/app_theme.dart';
+import 'package:flutter/material.dart';
+
+Widget createNormalText(String string,
+    {Color color,
+    bool boldText = false,
+    double size,
+    bool truncate = false,
+    bool alignRight = false}) {
+  size = size == null ? AppTheme.fontSizeM : size;
+  if (color == null) {
+    color = Colors.black;
+  }
+
+  TextOverflow overflowStyle = TextOverflow.visible;
+  if (truncate) {
+    overflowStyle = TextOverflow.ellipsis;
+  }
+
+  return Text(
+    string,
+    overflow: overflowStyle,
+    textAlign: alignRight ? TextAlign.right : TextAlign.start,
+    style: TextStyle(
+        color: color,
+        fontSize: size,
+        fontWeight: boldText ? FontWeight.bold : FontWeight.normal),
+  );
+}
