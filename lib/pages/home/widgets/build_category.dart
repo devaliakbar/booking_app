@@ -73,7 +73,7 @@ Widget _buildCategoryItem(int index, List categories) {
     width: 200,
     padding: EdgeInsets.all(5),
     decoration: BoxDecoration(
-      color: Colors.grey[100],
+      color: AppTheme.greyBackgroundColor,
       borderRadius: BorderRadius.circular(5),
     ),
     child: Row(

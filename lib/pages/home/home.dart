@@ -1,6 +1,7 @@
 import 'package:bookingapp/pages/home/bloc/data/home_model.dart';
 import 'package:bookingapp/pages/home/bloc/home_bloc.dart';
 import 'package:bookingapp/pages/home/widgets/build_category.dart';
+import 'package:bookingapp/pages/home/widgets/build_products.dart';
 import 'package:bookingapp/pages/home/widgets/home_loading_shimmer.dart';
 import 'package:bookingapp/pages/home/widgets/slider.dart';
 import 'package:bookingapp/utility/app_theme.dart';
@@ -67,6 +68,7 @@ class Home extends StatelessWidget {
           SizedBox(
             height: 5,
           ),
+          buildProducts(homePageDatas.items)
         ],
       ),
     );
