@@ -9,7 +9,7 @@ Widget buiildCartIcon({String cartCount}) {
     child: Stack(
       children: <Widget>[
         Align(
-          alignment: Alignment.bottomCenter,
+          alignment: Alignment.bottomLeft,
           child: Icon(
             Icons.shopping_cart,
             size: AppTheme.iconSizeL,
@@ -27,7 +27,7 @@ Widget buiildCartIcon({String cartCount}) {
                       child: Stack(
                         children: <Widget>[
                           Icon(Icons.brightness_1,
-                              size: 23, color: Colors.yellow[800]),
+                              size: 23, color: AppTheme.yellowColor),
                           Align(
                             alignment: Alignment.topRight,
                             child: Center(

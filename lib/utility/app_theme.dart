@@ -22,20 +22,5 @@ class AppTheme {
   static final Color primaryColor = HexColor('#364159');
   static final Color secondaryColor = HexColor('#4F5A74');
 
-  static final Color whiteLowColor = Colors.white10;
-
-  static final Color blueColor = HexColor('#189EFF');
-
-  static final Color lightFontColor = Colors.grey;
-  static final Color fadeFontColor = HexColor('#F6F6F6');
-
-  static final Color menuColor = HexColor('#6AD6F1');
-  static final Color menuOrderColor = HexColor('#A092F0');
-  static final Color topSellerColor = HexColor('#57D9A3');
-  static final Color topCustomerColor = HexColor('#FF68B4');
-  static final Color productListColor = HexColor('#FFD700');
-  static final Color renameListColor = HexColor('#F88962');
-
-  static final Color shopwareColorOne = HexColor('#8E7BF9');
-  static final Color shopwareColorTwo = HexColor('#8369F8');
+  static final Color yellowColor = Colors.yellow[800];
 }

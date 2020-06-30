@@ -1,11 +1,11 @@
 import 'package:bookingapp/pages/home/bloc/data/home_model.dart';
 import 'package:bookingapp/pages/home/bloc/home_bloc.dart';
+import 'package:bookingapp/pages/home/widgets/build_category.dart';
+import 'package:bookingapp/pages/home/widgets/home_loading_shimmer.dart';
 import 'package:bookingapp/pages/home/widgets/slider.dart';
 import 'package:bookingapp/utility/app_theme.dart';
 import 'package:bookingapp/wiidgets/cart_icon.dart';
-import 'package:bookingapp/wiidgets/loading_widget.dart';
 import 'package:bookingapp/wiidgets/normal_text.dart';
-import 'package:bookingapp/wiidgets/search_field.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -57,9 +57,16 @@ class Home extends StatelessWidget {
         children: <Widget>[
           _buildHeaderSections(cartCount: homePageDatas.cartCount.toString()),
           SizedBox(
-            height: 7,
+            height: 5,
           ),
-          buildSlider(homePageDatas.bannersPath)
+          buildSlider(homePageDatas.bannersPath),
+          SizedBox(
+            height: 10,
+          ),
+          buildCategoryList(homePageDatas.categories),
+          SizedBox(
+            height: 5,
+          ),
         ],
       ),
     );
@@ -71,7 +78,7 @@ class Home extends StatelessWidget {
       child: Column(
         children: <Widget>[
           _buildHeaderSections(),
-          Expanded(child: showLoading())
+          Expanded(child: showHomeLoadingShimmer()),
         ],
       ),
     );
@@ -98,23 +105,20 @@ class Home extends StatelessWidget {
                       size: AppTheme.fontSizeL, boldText: true),
                 ),
               ),
-              buiildCartIcon(cartCount: cartCount)
+              IconButton(
+                  icon: Icon(
+                    Icons.search,
+                    size: AppTheme.iconSizeL,
+                  ),
+                  onPressed: () {}),
+              buiildCartIcon(cartCount: cartCount),
             ],
           ),
         ),
-        SizedBox(
-          height: 3,
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
-          child: buildSearchField(_searchController, _searchTriggered),
+        Divider(
+          color: Colors.black,
         ),
       ],
     );
-  }
-
-  final TextEditingController _searchController = TextEditingController();
-  _searchTriggered() {
-    print(_searchController.text);
   }
 }
