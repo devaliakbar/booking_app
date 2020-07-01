@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 Widget buildProducts(List products) {
   return Container(
     margin: EdgeInsets.symmetric(horizontal: 10),
-    child: Column(
-      mainAxisSize: MainAxisSize.min,
+    child: ListView(
       children: <Widget>[
         Align(
           alignment: Alignment.centerLeft,
@@ -17,6 +16,8 @@ Widget buildProducts(List products) {
         SizedBox(
           height: 7,
         ),
+        _buildListItem(),
+        _buildListItem(),
         _buildListItem()
       ],
     ),
@@ -26,7 +27,7 @@ Widget buildProducts(List products) {
 Widget _buildListItem() {
   _searchController.text = "0";
   return Container(
-    height: 300,
+    height: 285,
     margin: EdgeInsets.only(bottom: 10),
     child: Row(
       children: <Widget>[
@@ -87,8 +88,8 @@ Widget _buildListItem() {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       ButtonTheme(
-                        minWidth: 50.0,
-                        height: 50.0,
+                        minWidth: 43.0,
+                        height: 43.0,
                         child: RaisedButton(
                           child: createNormalText('-',
                               color: Colors.white, size: AppTheme.fontSizeL),
@@ -98,10 +99,14 @@ Widget _buildListItem() {
                           padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                         ),
                       ),
+                      SizedBox(
+                        width: 1.5,
+                      ),
                       Container(
-                        width: 50.0,
-                        height: 50,
+                        width: 43.0,
+                        height: 43,
                         child: TextField(
+                          enabled: false,
                           controller: _searchController,
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.black),
@@ -113,9 +118,12 @@ Widget _buildListItem() {
                           ),
                         ),
                       ),
+                      SizedBox(
+                        width: 1.5,
+                      ),
                       ButtonTheme(
-                        minWidth: 50.0,
-                        height: 50.0,
+                        minWidth: 43.0,
+                        height: 43.0,
                         child: RaisedButton(
                           child: createNormalText('+',
                               color: Colors.white, size: AppTheme.fontSizeL),
@@ -129,13 +137,13 @@ Widget _buildListItem() {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 5,
                 ),
                 Align(
                   alignment: Alignment.center,
                   child: ButtonTheme(
                     minWidth: 100.0,
-                    height: 50.0,
+                    height: 43.0,
                     child: RaisedButton(
                       child: createNormalText(
                         'Add To Cart',
@@ -179,7 +187,7 @@ Widget _buildListItem() {
                       ),
                     ),
                     imageUrl:
-                        "https://www.pngitem.com/pimgs/m/124-1243683_adidas-yeezy-boost-350-v2-sneakers-yeezy-core.png",
+                        "https://www.kindpng.com/picc/m/244-2441559_adidas-yeezy-boost-350-turtle-dove-transparent-background.png",
                     placeholder: (context, url) => showLoading(),
                     errorWidget: (context, url, error) => Icon(
                       Icons.person,
@@ -212,8 +220,8 @@ Widget _buildListItem() {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       ButtonTheme(
-                        minWidth: 50.0,
-                        height: 50.0,
+                        minWidth: 43.0,
+                        height: 43.0,
                         child: RaisedButton(
                           child: createNormalText('-',
                               color: Colors.white, size: AppTheme.fontSizeL),
@@ -223,10 +231,14 @@ Widget _buildListItem() {
                           padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                         ),
                       ),
+                      SizedBox(
+                        width: 1.5,
+                      ),
                       Container(
-                        width: 50.0,
-                        height: 50,
+                        width: 43.0,
+                        height: 43,
                         child: TextField(
+                          enabled: false,
                           controller: _searchController,
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.black),
@@ -238,9 +250,12 @@ Widget _buildListItem() {
                           ),
                         ),
                       ),
+                      SizedBox(
+                        width: 1.5,
+                      ),
                       ButtonTheme(
-                        minWidth: 50.0,
-                        height: 50.0,
+                        minWidth: 43.0,
+                        height: 43.0,
                         child: RaisedButton(
                           child: createNormalText('+',
                               color: Colors.white, size: AppTheme.fontSizeL),
@@ -254,13 +269,13 @@ Widget _buildListItem() {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 5,
                 ),
                 Align(
                   alignment: Alignment.center,
                   child: ButtonTheme(
                     minWidth: 100.0,
-                    height: 50.0,
+                    height: 43.0,
                     child: RaisedButton(
                       child: createNormalText(
                         'Add To Cart',
@@ -276,7 +291,7 @@ Widget _buildListItem() {
               ],
             ),
           ),
-        ),
+        )
       ],
     ),
   );

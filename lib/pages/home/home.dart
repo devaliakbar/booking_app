@@ -5,6 +5,7 @@ import 'package:bookingapp/pages/home/widgets/build_products.dart';
 import 'package:bookingapp/pages/home/widgets/home_loading_shimmer.dart';
 import 'package:bookingapp/pages/home/widgets/slider.dart';
 import 'package:bookingapp/utility/app_theme.dart';
+import 'package:bookingapp/utility/statusbar_color.dart';
 import 'package:bookingapp/wiidgets/cart_icon.dart';
 import 'package:bookingapp/wiidgets/normal_text.dart';
 
@@ -15,9 +16,11 @@ class Home extends StatelessWidget {
   static const String myRoute = '/home';
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<HomeBloc>(context).add(HomeLoadEvent());
+    setUpStatusbarColor();
 
+    BlocProvider.of<HomeBloc>(context).add(HomeLoadEvent());
     return Scaffold(
+      backgroundColor: Colors.white,
       body: BlocConsumer(
         bloc: BlocProvider.of<HomeBloc>(context),
         listener: (context, state) {
@@ -68,7 +71,7 @@ class Home extends StatelessWidget {
           SizedBox(
             height: 5,
           ),
-          buildProducts(homePageDatas.items)
+          Expanded(child: buildProducts(homePageDatas.items))
         ],
       ),
     );
@@ -98,27 +101,24 @@ class Home extends StatelessWidget {
               IconButton(
                   icon: Icon(
                     Icons.menu,
-                    size: AppTheme.iconSizeL,
+                    size: AppTheme.iconSizeM,
                   ),
                   onPressed: () {}),
               Expanded(
                 child: Center(
                   child: createNormalText('Home',
-                      size: AppTheme.fontSizeL, boldText: true),
+                      size: AppTheme.fontSizeXL, boldText: true),
                 ),
               ),
               IconButton(
                   icon: Icon(
                     Icons.search,
-                    size: AppTheme.iconSizeL,
+                    size: AppTheme.iconSizeM,
                   ),
                   onPressed: () {}),
               buiildCartIcon(cartCount: cartCount),
             ],
           ),
-        ),
-        Divider(
-          color: Colors.black,
         ),
       ],
     );

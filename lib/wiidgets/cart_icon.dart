@@ -9,10 +9,10 @@ Widget buiildCartIcon({String cartCount}) {
     child: Stack(
       children: <Widget>[
         Align(
-          alignment: Alignment.bottomLeft,
+          alignment: Alignment.center,
           child: Icon(
             Icons.shopping_cart,
-            size: AppTheme.iconSizeL,
+            size: AppTheme.iconSizeM,
           ),
         ),
         cartCount == null

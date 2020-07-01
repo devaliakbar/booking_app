@@ -18,6 +18,7 @@ class AppTheme {
   static double fontSizeS = screenHeight > mediumScreenSize ? 17.0 : 14.0;
   static double fontSizeM = screenHeight > mediumScreenSize ? 18.0 : 16.0;
   static double fontSizeL = screenHeight > mediumScreenSize ? 19.0 : 17.0;
+  static double fontSizeXL = screenHeight > mediumScreenSize ? 21.0 : 19.0;
 
   static final Color blueFontColor = HexColor('#4F5A74');
 

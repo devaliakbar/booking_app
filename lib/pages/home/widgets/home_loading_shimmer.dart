@@ -151,7 +151,7 @@ Widget showHomeLoadingShimmer() {
 
 Widget _buildShimmingList(context) {
   return Container(
-    height: 300,
+    height: 285,
     margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
     child: Row(
       children: <Widget>[
@@ -207,7 +207,7 @@ Widget _buildShimmingList(context) {
                   highlightColor: Colors.grey[100],
                   child: Container(
                     margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
-                    height: 60,
+                    height: 52.5,
                     color: Colors.white,
                   ),
                 ),
@@ -216,7 +216,7 @@ Widget _buildShimmingList(context) {
                   highlightColor: Colors.grey[100],
                   child: Container(
                     margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
-                    height: 60,
+                    height: 52.5,
                     color: Colors.white,
                   ),
                 )
@@ -279,7 +279,7 @@ Widget _buildShimmingList(context) {
                   highlightColor: Colors.grey[100],
                   child: Container(
                     margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
-                    height: 50,
+                    height: 45,
                     color: Colors.white,
                   ),
                 ),
@@ -288,7 +288,7 @@ Widget _buildShimmingList(context) {
                   highlightColor: Colors.grey[100],
                   child: Container(
                     margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
-                    height: 50,
+                    height: 45,
                     color: Colors.white,
                   ),
                 )
