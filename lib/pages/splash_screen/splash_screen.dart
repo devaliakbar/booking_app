@@ -1,4 +1,4 @@
-import 'package:bookingapp/pages/home/home.dart';
+import 'package:bookingapp/pages/home/main_home.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -8,7 +8,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Timer(Duration(milliseconds: 1500), () async {
       Navigator.of(context).pushNamedAndRemoveUntil(
-          Home.myRoute, (Route<dynamic> route) => false);
+          MainHome.myRoute, (Route<dynamic> route) => false);
     });
 
     return Scaffold(

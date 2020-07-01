@@ -5,20 +5,17 @@ import 'package:bookingapp/pages/home/widgets/build_products.dart';
 import 'package:bookingapp/pages/home/widgets/home_loading_shimmer.dart';
 import 'package:bookingapp/pages/home/widgets/slider.dart';
 import 'package:bookingapp/utility/app_theme.dart';
-import 'package:bookingapp/utility/statusbar_color.dart';
 import 'package:bookingapp/wiidgets/cart_icon.dart';
-import 'package:bookingapp/wiidgets/normal_text.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Home extends StatelessWidget {
-  static const String myRoute = '/home';
+  final Function toggleMenu;
+  Home(this.toggleMenu);
+
   @override
   Widget build(BuildContext context) {
-    setUpStatusbarColor();
-
-    BlocProvider.of<HomeBloc>(context).add(HomeLoadEvent());
     return Scaffold(
       backgroundColor: Colors.white,
       body: BlocConsumer(
@@ -97,35 +94,30 @@ class Home extends StatelessWidget {
 
 //HEADER
   Widget _buildHeaderSections({String cartCount}) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 5),
-          child: Row(
-            children: <Widget>[
-              IconButton(
-                  icon: Icon(
-                    Icons.menu,
-                    size: AppTheme.iconSizeS,
-                  ),
-                  onPressed: () {}),
-              Expanded(
-                child: Center(
-                  child: createNormalText('Home', size: AppTheme.fontSizeXL),
-                ),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 5),
+      child: Row(
+        children: <Widget>[
+          IconButton(
+              icon: Icon(
+                Icons.menu,
+                size: AppTheme.iconSizeS,
               ),
-              IconButton(
-                  icon: Icon(
-                    Icons.search,
-                    size: AppTheme.iconSizeS,
-                  ),
-                  onPressed: () {}),
-              buildCartIcon(cartCount: cartCount),
-            ],
+              onPressed: toggleMenu),
+          Expanded(
+            child: Container(
+                //child: createNormalText('Home', size: AppTheme.fontSizeXL),
+                ),
           ),
-        ),
-      ],
+          IconButton(
+              icon: Icon(
+                Icons.search,
+                size: AppTheme.iconSizeS,
+              ),
+              onPressed: () {}),
+          buildCartIcon(cartCount: cartCount),
+        ],
+      ),
     );
   }
 }

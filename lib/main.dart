@@ -1,6 +1,6 @@
 import 'package:bookingapp/pages/home/bloc/data/home_repo.dart';
 import 'package:bookingapp/pages/home/bloc/home_bloc.dart';
-import 'package:bookingapp/pages/home/home.dart';
+import 'package:bookingapp/pages/home/main_home.dart';
 import 'package:bookingapp/pages/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(fontFamily: 'Poppins'),
         routes: {
           SplashScreen.myRoute: (BuildContext context) => SplashScreen(),
-          Home.myRoute: (BuildContext context) => Home(),
+          MainHome.myRoute: (BuildContext context) => MainHome(),
         },
       ),
     );
