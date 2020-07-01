@@ -23,5 +23,6 @@ class AppTheme {
   static final Color blueFontColor = HexColor('#4F5A74');
 
   static final Color yellowColor = Colors.yellow[800];
+
   static final Color greyBackgroundColor = Colors.grey[100];
 }

@@ -2,7 +2,7 @@ import 'package:bookingapp/utility/app_theme.dart';
 import 'package:bookingapp/wiidgets/normal_text.dart';
 import 'package:flutter/material.dart';
 
-Widget buiildCartIcon({String cartCount}) {
+Widget buildCartIcon({String cartCount}) {
   return Container(
     height: 40,
     width: 40,
@@ -12,7 +12,7 @@ Widget buiildCartIcon({String cartCount}) {
           alignment: Alignment.center,
           child: Icon(
             Icons.shopping_cart,
-            size: AppTheme.iconSizeM,
+            size: AppTheme.iconSizeS,
           ),
         ),
         cartCount == null

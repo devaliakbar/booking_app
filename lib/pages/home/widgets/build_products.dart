@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 Widget buildProducts(List products) {
   return Container(
     margin: EdgeInsets.symmetric(horizontal: 10),
-    child: ListView(
+    child: Column(
       children: <Widget>[
         Align(
           alignment: Alignment.centerLeft,
@@ -16,9 +16,14 @@ Widget buildProducts(List products) {
         SizedBox(
           height: 7,
         ),
-        _buildListItem(),
-        _buildListItem(),
-        _buildListItem()
+        Container(
+          height: (288.0 * 3),
+          child: ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: 3,
+            itemBuilder: (_, __) => _buildListItem(),
+          ),
+        )
       ],
     ),
   );
@@ -27,7 +32,7 @@ Widget buildProducts(List products) {
 Widget _buildListItem() {
   _searchController.text = "0";
   return Container(
-    height: 285,
+    height: 278,
     margin: EdgeInsets.only(bottom: 10),
     child: Row(
       children: <Widget>[
@@ -87,12 +92,17 @@ Widget _buildListItem() {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      ButtonTheme(
-                        minWidth: 43.0,
-                        height: 43.0,
+                      SizedBox(
+                        width: 43.0,
+                        height: 40.0,
                         child: RaisedButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
                           child: createNormalText('-',
-                              color: Colors.white, size: AppTheme.fontSizeL),
+                              color: Colors.white,
+                              size: AppTheme.fontSizeS,
+                              boldText: true),
                           onPressed: () {},
                           color: Colors.black,
                           splashColor: AppTheme.yellowColor,
@@ -100,17 +110,19 @@ Widget _buildListItem() {
                         ),
                       ),
                       SizedBox(
-                        width: 1.5,
+                        width: 6,
                       ),
                       Container(
                         width: 43.0,
-                        height: 43,
+                        height: 40,
                         child: TextField(
                           enabled: false,
                           controller: _searchController,
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.black),
                           decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
                             contentPadding: EdgeInsets.only(bottom: 0),
                             border: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.black),
@@ -119,14 +131,19 @@ Widget _buildListItem() {
                         ),
                       ),
                       SizedBox(
-                        width: 1.5,
+                        width: 6,
                       ),
-                      ButtonTheme(
-                        minWidth: 43.0,
-                        height: 43.0,
+                      SizedBox(
+                        width: 43.0,
+                        height: 40,
                         child: RaisedButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
                           child: createNormalText('+',
-                              color: Colors.white, size: AppTheme.fontSizeL),
+                              color: Colors.white,
+                              size: AppTheme.fontSizeS,
+                              boldText: true),
                           onPressed: () {},
                           color: Colors.black,
                           splashColor: AppTheme.yellowColor,
@@ -137,21 +154,35 @@ Widget _buildListItem() {
                   ),
                 ),
                 SizedBox(
-                  height: 5,
+                  height: 10,
                 ),
                 Align(
                   alignment: Alignment.center,
-                  child: ButtonTheme(
-                    minWidth: 100.0,
-                    height: 43.0,
+                  child: SizedBox(
+                    width: 120.0,
+                    height: 40.0,
                     child: RaisedButton(
-                      child: createNormalText(
-                        'Add To Cart',
-                        color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          side: BorderSide(color: Colors.black, width: 1)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.add_shopping_cart,
+                            size: AppTheme.iconSizeXS,
+                          ),
+                          SizedBox(
+                            width: 1.5,
+                          ),
+                          createNormalText('ADD TO CART',
+                              size: AppTheme.fontSizeXS),
+                        ],
                       ),
                       onPressed: () {},
-                      color: AppTheme.yellowColor,
-                      splashColor: Colors.black87,
+                      color: Colors.white,
+                      splashColor: AppTheme.yellowColor,
+                      elevation: 0,
                       padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                     ),
                   ),
@@ -219,12 +250,17 @@ Widget _buildListItem() {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      ButtonTheme(
-                        minWidth: 43.0,
-                        height: 43.0,
+                      SizedBox(
+                        width: 43.0,
+                        height: 40.0,
                         child: RaisedButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
                           child: createNormalText('-',
-                              color: Colors.white, size: AppTheme.fontSizeL),
+                              color: Colors.white,
+                              size: AppTheme.fontSizeS,
+                              boldText: true),
                           onPressed: () {},
                           color: Colors.black,
                           splashColor: AppTheme.yellowColor,
@@ -232,17 +268,19 @@ Widget _buildListItem() {
                         ),
                       ),
                       SizedBox(
-                        width: 1.5,
+                        width: 6,
                       ),
                       Container(
                         width: 43.0,
-                        height: 43,
+                        height: 40,
                         child: TextField(
                           enabled: false,
                           controller: _searchController,
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.black),
                           decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
                             contentPadding: EdgeInsets.only(bottom: 0),
                             border: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.black),
@@ -251,14 +289,19 @@ Widget _buildListItem() {
                         ),
                       ),
                       SizedBox(
-                        width: 1.5,
+                        width: 6,
                       ),
-                      ButtonTheme(
-                        minWidth: 43.0,
-                        height: 43.0,
+                      SizedBox(
+                        width: 43.0,
+                        height: 40,
                         child: RaisedButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
                           child: createNormalText('+',
-                              color: Colors.white, size: AppTheme.fontSizeL),
+                              color: Colors.white,
+                              size: AppTheme.fontSizeS,
+                              boldText: true),
                           onPressed: () {},
                           color: Colors.black,
                           splashColor: AppTheme.yellowColor,
@@ -269,21 +312,35 @@ Widget _buildListItem() {
                   ),
                 ),
                 SizedBox(
-                  height: 5,
+                  height: 10,
                 ),
                 Align(
                   alignment: Alignment.center,
-                  child: ButtonTheme(
-                    minWidth: 100.0,
-                    height: 43.0,
+                  child: SizedBox(
+                    width: 120.0,
+                    height: 40.0,
                     child: RaisedButton(
-                      child: createNormalText(
-                        'Add To Cart',
-                        color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          side: BorderSide(color: Colors.black, width: 1)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.add_shopping_cart,
+                            size: AppTheme.iconSizeXS,
+                          ),
+                          SizedBox(
+                            width: 1.5,
+                          ),
+                          createNormalText('ADD TO CART',
+                              size: AppTheme.fontSizeXS),
+                        ],
                       ),
                       onPressed: () {},
-                      color: AppTheme.yellowColor,
-                      splashColor: Colors.black87,
+                      color: Colors.white,
+                      splashColor: AppTheme.yellowColor,
+                      elevation: 0,
                       padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                     ),
                   ),
@@ -291,7 +348,7 @@ Widget _buildListItem() {
               ],
             ),
           ),
-        )
+        ),
       ],
     ),
   );

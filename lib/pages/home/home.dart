@@ -5,6 +5,7 @@ import 'package:bookingapp/pages/home/widgets/build_products.dart';
 import 'package:bookingapp/pages/home/widgets/home_loading_shimmer.dart';
 import 'package:bookingapp/pages/home/widgets/slider.dart';
 import 'package:bookingapp/utility/app_theme.dart';
+import 'package:bookingapp/utility/hexcolor.dart';
 import 'package:bookingapp/utility/statusbar_color.dart';
 import 'package:bookingapp/wiidgets/cart_icon.dart';
 import 'package:bookingapp/wiidgets/normal_text.dart';
@@ -63,15 +64,20 @@ class Home extends StatelessWidget {
           SizedBox(
             height: 5,
           ),
-          buildSlider(homePageDatas.bannersPath),
-          SizedBox(
-            height: 10,
-          ),
-          buildCategoryList(homePageDatas.categories),
-          SizedBox(
-            height: 5,
-          ),
-          Expanded(child: buildProducts(homePageDatas.items))
+          Expanded(
+              child: ListView(
+            children: <Widget>[
+              buildSlider(homePageDatas.bannersPath),
+              SizedBox(
+                height: 10,
+              ),
+              buildCategoryList(homePageDatas.categories),
+              SizedBox(
+                height: 5,
+              ),
+              buildProducts(homePageDatas.items)
+            ],
+          ))
         ],
       ),
     );
@@ -101,22 +107,21 @@ class Home extends StatelessWidget {
               IconButton(
                   icon: Icon(
                     Icons.menu,
-                    size: AppTheme.iconSizeM,
+                    size: AppTheme.iconSizeS,
                   ),
                   onPressed: () {}),
               Expanded(
                 child: Center(
-                  child: createNormalText('Home',
-                      size: AppTheme.fontSizeXL, boldText: true),
+                  child: createNormalText('Home', size: AppTheme.fontSizeXL),
                 ),
               ),
               IconButton(
                   icon: Icon(
                     Icons.search,
-                    size: AppTheme.iconSizeM,
+                    size: AppTheme.iconSizeS,
                   ),
                   onPressed: () {}),
-              buiildCartIcon(cartCount: cartCount),
+              buildCartIcon(cartCount: cartCount),
             ],
           ),
         ),
