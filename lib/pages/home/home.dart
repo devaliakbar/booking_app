@@ -5,7 +5,6 @@ import 'package:bookingapp/pages/home/widgets/build_products.dart';
 import 'package:bookingapp/pages/home/widgets/home_loading_shimmer.dart';
 import 'package:bookingapp/pages/home/widgets/slider.dart';
 import 'package:bookingapp/utility/app_theme.dart';
-import 'package:bookingapp/utility/hexcolor.dart';
 import 'package:bookingapp/utility/statusbar_color.dart';
 import 'package:bookingapp/wiidgets/cart_icon.dart';
 import 'package:bookingapp/wiidgets/normal_text.dart';
@@ -31,7 +30,7 @@ class Home extends StatelessWidget {
           if (state is HomeLoadingFailedState) {
             return _buildError(state.errorMsg);
           } else if (state is HomeLoadedState) {
-            return _buildBody(state.homePageDatas);
+            return _buildBody(state.homePageDatas, context);
           } else {
             return _buildLoading();
           }
@@ -56,7 +55,7 @@ class Home extends StatelessWidget {
   }
 
 //MAIN BODY
-  Widget _buildBody(HomePageDatas homePageDatas) {
+  Widget _buildBody(HomePageDatas homePageDatas, BuildContext context) {
     return SafeArea(
       child: Column(
         children: <Widget>[
@@ -75,7 +74,8 @@ class Home extends StatelessWidget {
               SizedBox(
                 height: 5,
               ),
-              buildProducts(homePageDatas.items)
+              buildProducts(
+                  homePageDatas.items, MediaQuery.of(context).size.width)
             ],
           ))
         ],

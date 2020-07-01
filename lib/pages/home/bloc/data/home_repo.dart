@@ -9,7 +9,7 @@ class HomeRepo {
       "bannersPath": [
         "https://www.dboyzfashion.com/wp-content/uploads/2016/06/adidas-originals-shoes-banner.jpg",
         "https://i.pinimg.com/originals/18/d4/70/18d470b3a5acaf907fe121ca703fceff.jpg",
-        "https://dunked.cdn.speedyrails.net/assets/prod/101339/p1cf5a38c9l64a1f5qq11gd14vg3.jpg",
+        "https://kwietstorms.files.wordpress.com/2015/02/yeezy-adidas-banner1.jpg",
       ],
       "cartCount": 3,
       "categories": [
@@ -19,50 +19,306 @@ class HomeRepo {
               "https://www.pngfind.com/pngs/m/48-480758_jordan-shoes-png-best-jordan-shoes-transparent-png.png"
         },
         {
-          "name": "Bag",
+          "name": "Backpack",
           "imagePath":
-              "https://toppng.com/uploads/preview/ucci-transparent-bag-gucci-bag-no-background-115629594552n1ydjagiv.png"
+              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwed6253fd/hi-res/AAUBA0006FA01_S20-BLK0001_01.png?sw=1000&sh=1250"
         },
         {
-          "name": "Dress",
+          "name": "Suits",
           "imagePath":
               "https://w7.pngwing.com/pngs/1005/532/png-transparent-tuxedo-suit-formal-wear-men-s-suits-black-notched-lapel-suit-blazer-illustration-men-suit-necktie-cartoon.png"
         },
         {
-          "name": "Cars",
+          "name": "T-Shirt",
           "imagePath":
-              "https://www.pinpng.com/pngs/m/207-2072599_png-mustang-with-transparent-background-png-download.png"
+              "https://i.ya-webdesign.com/images/navy-blue-tshirt-png-2.png"
         },
         {
-          "name": "Groceries",
+          "name": "Shorts",
           "imagePath":
-              "https://www.pngfind.com/pngs/m/203-2037182_groceries-transparent-images-png-groceries-png-png-download.png"
+              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwc06e8780/hi-res/MO7215L0299_S20-V0060_01.png?sw=1000&sh=1250"
         },
       ],
       "items": [
         {
           "id": "1",
-          "name": "Item A",
-          "brand": "Brand A",
-          "category": "Category",
+          "name": "Yeezy",
+          "brand": "Adidas",
+          "category": "Shoes",
+          "price": 400.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://www.kindpng.com/picc/m/244-2441559_adidas-yeezy-boost-350-turtle-dove-transparent-background.png"
+        },
+        {
+          "id": "2",
+          "name": "Men Blue",
+          "brand": "Adidas",
+          "category": "T-Shirt",
+          "price": 38.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://i.ya-webdesign.com/images/navy-blue-tshirt-png-2.png"
+        },
+        {
+          "id": "3",
+          "name": "Classic",
+          "brand": "Adidas",
+          "category": "Backpack",
           "price": 58.00,
-          "cartQty": 2.5
+          "cartQty": 1,
+          "imagePath":
+              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwb6e1cfd0/hi-res/GF3197_S20-001_01.png?sw=400&sh=500"
+        },
+        {
+          "id": "4",
+          "name": "Sweatshorts",
+          "brand": "Adidas",
+          "category": "Shorts",
+          "price": 28.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwa9a7c665/hi-res/DY3265_S19-001_01.png?sw=1000&sh=1250"
         },
         {
           "id": "1",
-          "name": "Item A",
-          "brand": "Brand A",
-          "category": "Category",
+          "name": "Yeezy",
+          "brand": "Adidas",
+          "category": "Shoes",
+          "price": 400.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://www.kindpng.com/picc/m/244-2441559_adidas-yeezy-boost-350-turtle-dove-transparent-background.png"
+        },
+        {
+          "id": "2",
+          "name": "Men Blue",
+          "brand": "Adidas",
+          "category": "T-Shirt",
+          "price": 38.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://i.ya-webdesign.com/images/navy-blue-tshirt-png-2.png"
+        },
+        {
+          "id": "3",
+          "name": "Classic",
+          "brand": "Adidas",
+          "category": "Backpack",
           "price": 58.00,
-          "cartQty": 2.5
+          "cartQty": 1,
+          "imagePath":
+              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwb6e1cfd0/hi-res/GF3197_S20-001_01.png?sw=400&sh=500"
+        },
+        {
+          "id": "4",
+          "name": "Sweatshorts",
+          "brand": "Adidas",
+          "category": "Shorts",
+          "price": 28.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwa9a7c665/hi-res/DY3265_S19-001_01.png?sw=1000&sh=1250"
         },
         {
           "id": "1",
-          "name": "Item A",
-          "brand": "Brand A",
-          "category": "Category",
+          "name": "Yeezy",
+          "brand": "Adidas",
+          "category": "Shoes",
+          "price": 400.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://www.kindpng.com/picc/m/244-2441559_adidas-yeezy-boost-350-turtle-dove-transparent-background.png"
+        },
+        {
+          "id": "2",
+          "name": "Men Blue",
+          "brand": "Adidas",
+          "category": "T-Shirt",
+          "price": 38.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://i.ya-webdesign.com/images/navy-blue-tshirt-png-2.png"
+        },
+        {
+          "id": "3",
+          "name": "Classic",
+          "brand": "Adidas",
+          "category": "Backpack",
           "price": 58.00,
-          "cartQty": 2.5
+          "cartQty": 1,
+          "imagePath":
+              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwb6e1cfd0/hi-res/GF3197_S20-001_01.png?sw=400&sh=500"
+        },
+        {
+          "id": "4",
+          "name": "Sweatshorts",
+          "brand": "Adidas",
+          "category": "Shorts",
+          "price": 28.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwa9a7c665/hi-res/DY3265_S19-001_01.png?sw=1000&sh=1250"
+        },
+        {
+          "id": "1",
+          "name": "Yeezy",
+          "brand": "Adidas",
+          "category": "Shoes",
+          "price": 400.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://www.kindpng.com/picc/m/244-2441559_adidas-yeezy-boost-350-turtle-dove-transparent-background.png"
+        },
+        {
+          "id": "2",
+          "name": "Men Blue",
+          "brand": "Adidas",
+          "category": "T-Shirt",
+          "price": 38.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://i.ya-webdesign.com/images/navy-blue-tshirt-png-2.png"
+        },
+        {
+          "id": "3",
+          "name": "Classic",
+          "brand": "Adidas",
+          "category": "Backpack",
+          "price": 58.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwb6e1cfd0/hi-res/GF3197_S20-001_01.png?sw=400&sh=500"
+        },
+        {
+          "id": "4",
+          "name": "Sweatshorts",
+          "brand": "Adidas",
+          "category": "Shorts",
+          "price": 28.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwa9a7c665/hi-res/DY3265_S19-001_01.png?sw=1000&sh=1250"
+        },
+        {
+          "id": "1",
+          "name": "Yeezy",
+          "brand": "Adidas",
+          "category": "Shoes",
+          "price": 400.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://www.kindpng.com/picc/m/244-2441559_adidas-yeezy-boost-350-turtle-dove-transparent-background.png"
+        },
+        {
+          "id": "2",
+          "name": "Men Blue",
+          "brand": "Adidas",
+          "category": "T-Shirt",
+          "price": 38.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://i.ya-webdesign.com/images/navy-blue-tshirt-png-2.png"
+        },
+        {
+          "id": "3",
+          "name": "Classic",
+          "brand": "Adidas",
+          "category": "Backpack",
+          "price": 58.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwb6e1cfd0/hi-res/GF3197_S20-001_01.png?sw=400&sh=500"
+        },
+        {
+          "id": "4",
+          "name": "Sweatshorts",
+          "brand": "Adidas",
+          "category": "Shorts",
+          "price": 28.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwa9a7c665/hi-res/DY3265_S19-001_01.png?sw=1000&sh=1250"
+        },
+        {
+          "id": "1",
+          "name": "Yeezy",
+          "brand": "Adidas",
+          "category": "Shoes",
+          "price": 400.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://www.kindpng.com/picc/m/244-2441559_adidas-yeezy-boost-350-turtle-dove-transparent-background.png"
+        },
+        {
+          "id": "2",
+          "name": "Men Blue",
+          "brand": "Adidas",
+          "category": "T-Shirt",
+          "price": 38.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://i.ya-webdesign.com/images/navy-blue-tshirt-png-2.png"
+        },
+        {
+          "id": "3",
+          "name": "Classic",
+          "brand": "Adidas",
+          "category": "Backpack",
+          "price": 58.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwb6e1cfd0/hi-res/GF3197_S20-001_01.png?sw=400&sh=500"
+        },
+        {
+          "id": "4",
+          "name": "Sweatshorts",
+          "brand": "Adidas",
+          "category": "Shorts",
+          "price": 28.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwa9a7c665/hi-res/DY3265_S19-001_01.png?sw=1000&sh=1250"
+        },
+        {
+          "id": "1",
+          "name": "Yeezy",
+          "brand": "Adidas",
+          "category": "Shoes",
+          "price": 400.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://www.kindpng.com/picc/m/244-2441559_adidas-yeezy-boost-350-turtle-dove-transparent-background.png"
+        },
+        {
+          "id": "2",
+          "name": "Men Blue",
+          "brand": "Adidas",
+          "category": "T-Shirt",
+          "price": 38.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://i.ya-webdesign.com/images/navy-blue-tshirt-png-2.png"
+        },
+        {
+          "id": "3",
+          "name": "Classic",
+          "brand": "Adidas",
+          "category": "Backpack",
+          "price": 58.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwb6e1cfd0/hi-res/GF3197_S20-001_01.png?sw=400&sh=500"
+        },
+        {
+          "id": "4",
+          "name": "Sweatshorts",
+          "brand": "Adidas",
+          "category": "Shorts",
+          "price": 28.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwa9a7c665/hi-res/DY3265_S19-001_01.png?sw=1000&sh=1250"
         }
       ]
     };

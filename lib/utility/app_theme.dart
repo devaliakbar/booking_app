@@ -25,4 +25,6 @@ class AppTheme {
   static final Color yellowColor = Colors.yellow[800];
 
   static final Color greyBackgroundColor = Colors.grey[100];
+
+  static final Color lightBlackColor = HexColor("#545454");
 }

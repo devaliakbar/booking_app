@@ -31,13 +31,20 @@ class ItemDetails {
   final String category;
   final double price;
   final double cartQty;
+  final String imagePath;
 
-  ItemDetails(
-      this.id, this.name, this.brand, this.category, this.price, this.cartQty);
+  ItemDetails(this.id, this.name, this.brand, this.category, this.price,
+      this.cartQty, this.imagePath);
 
   factory ItemDetails.fromJson(Map<String, dynamic> json) {
-    return ItemDetails(json['id'], json['name'], json['brand'],
-        json['category'], json['price'], json['cartQty']);
+    return ItemDetails(
+        json['id'],
+        json['name'],
+        json['brand'],
+        json['category'],
+        double.parse(json['price'].toString()),
+        double.parse(json['cartQty'].toString()),
+        json['imagePath']);
   }
 }
 
