@@ -1,7 +1,6 @@
 import 'package:bookingapp/pages/home/bloc/home_bloc.dart';
 import 'package:bookingapp/pages/home/home.dart';
 import 'package:bookingapp/utility/app_theme.dart';
-import 'package:bookingapp/utility/hexcolor.dart';
 import 'package:bookingapp/utility/statusbar_color.dart';
 import 'package:bookingapp/wiidgets/normal_text.dart';
 import 'package:flutter/material.dart';

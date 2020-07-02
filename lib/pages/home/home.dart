@@ -119,11 +119,11 @@ class Home extends StatelessWidget {
                 color: AppTheme.primaryBlueColor,
               ),
               onPressed: () async {
-                String selected = await showSearch<String>(
-                  context: context,
-                  delegate: SearchInterface(),
+                final String selected = await Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SearchInterface()),
                 );
-                print("Result : " + selected);
+                print("Result : " + selected.toString());
               }),
           buildCartIcon(cartCount: cartCount),
         ],
