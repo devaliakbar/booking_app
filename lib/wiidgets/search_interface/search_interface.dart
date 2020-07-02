@@ -172,9 +172,10 @@ class _SearchInterfaceState extends State<SearchInterface> {
     setState(() {});
   }
 
-  _addResult(String name) {
+  _addResult(String name) async {
     Map<String, dynamic> row = {SearchDBHelper.columnName: name};
-    dbHelper.insert(row);
+    await dbHelper.insert(row);
+    dbHelper.clearDb();
   }
 
   _buildPreviousResults() {

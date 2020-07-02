@@ -51,7 +51,7 @@ class SearchDBHelper {
 
   Future<List<Map<String, dynamic>>> queryAllRows() async {
     Database db = await instance.database;
-    return await db.query(table);
+    return await db.query(table, orderBy: columnId + " DESC");
   }
 
   Future<int> queryRowCount() async {
@@ -60,10 +60,18 @@ class SearchDBHelper {
         await db.rawQuery('SELECT COUNT(*) FROM $table'));
   }
 
-  // Deletes the row specified by the id. The number of affected rows is
-  // returned. This should be 1 as long as the row exists.
   Future<int> delete(int id) async {
     Database db = await instance.database;
     return await db.delete(table, where: '$columnId = ?', whereArgs: [id]);
+  }
+
+  clearDb() async {
+    Database db = await instance.database;
+    if (await queryRowCount() > 30) {
+      int id = Sqflite.firstIntValue(
+          await db.rawQuery('SELECT MIN(' + columnId + ') FROM $table'));
+
+      db.delete(table, where: '$columnId = ?', whereArgs: [id]);
+    }
   }
 }
