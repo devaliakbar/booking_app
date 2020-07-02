@@ -50,7 +50,7 @@ class _MainHomeState extends State<MainHome>
   @override
   Widget build(BuildContext context) {
     setUpStatusbarColor(
-        backgroundColor: isCollapsed ? Colors.white : AppTheme.blueFontColor,
+        backgroundColor: isCollapsed ? Colors.white : AppTheme.primaryBlueColor,
         whiteColor: !isCollapsed);
 
     Size size = MediaQuery.of(context).size;
@@ -79,7 +79,7 @@ class _MainHomeState extends State<MainHome>
         scale: menuScaleAnimation,
         child: Container(
           margin: EdgeInsets.only(left: 15),
-          color: AppTheme.blueFontColor,
+          color: AppTheme.primaryBlueColor,
           child: Align(
             alignment: Alignment.centerLeft,
             child: Column(
@@ -219,7 +219,7 @@ class _MainHomeState extends State<MainHome>
     if (mounted) {
       setState(() {
         if (isCollapsed) {
-          backgroundColor = AppTheme.blueFontColor;
+          backgroundColor = AppTheme.primaryBlueColor;
           _controller.forward();
         } else
           _controller.reverse().then((e) {

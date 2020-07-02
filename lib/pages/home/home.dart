@@ -6,6 +6,7 @@ import 'package:bookingapp/pages/home/widgets/home_loading_shimmer.dart';
 import 'package:bookingapp/pages/home/widgets/slider.dart';
 import 'package:bookingapp/utility/app_theme.dart';
 import 'package:bookingapp/wiidgets/cart_icon.dart';
+import 'package:bookingapp/wiidgets/search_interface/search_interface.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,7 +30,7 @@ class Home extends StatelessWidget {
           } else if (state is HomeLoadedState) {
             return _buildBody(state.homePageDatas, context);
           } else {
-            return _buildLoading();
+            return _buildLoading(context);
           }
         },
       ),
@@ -56,7 +57,8 @@ class Home extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: <Widget>[
-          _buildHeaderSections(cartCount: homePageDatas.cartCount.toString()),
+          _buildHeaderSections(context,
+              cartCount: homePageDatas.cartCount.toString()),
           SizedBox(
             height: 5,
           ),
@@ -81,11 +83,11 @@ class Home extends StatelessWidget {
   }
 
 //LOADING
-  Widget _buildLoading() {
+  Widget _buildLoading(BuildContext context) {
     return SafeArea(
       child: Column(
         children: <Widget>[
-          _buildHeaderSections(),
+          _buildHeaderSections(context),
           Expanded(child: showHomeLoadingShimmer()),
         ],
       ),
@@ -93,7 +95,7 @@ class Home extends StatelessWidget {
   }
 
 //HEADER
-  Widget _buildHeaderSections({String cartCount}) {
+  Widget _buildHeaderSections(BuildContext context, {String cartCount}) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 5),
       child: Row(
@@ -102,6 +104,7 @@ class Home extends StatelessWidget {
               icon: Icon(
                 Icons.menu,
                 size: AppTheme.iconSizeS,
+                color: AppTheme.primaryBlueColor,
               ),
               onPressed: toggleMenu),
           Expanded(
@@ -113,8 +116,15 @@ class Home extends StatelessWidget {
               icon: Icon(
                 Icons.search,
                 size: AppTheme.iconSizeS,
+                color: AppTheme.primaryBlueColor,
               ),
-              onPressed: () {}),
+              onPressed: () async {
+                String selected = await showSearch<String>(
+                  context: context,
+                  delegate: SearchInterface(),
+                );
+                print("Result : " + selected);
+              }),
           buildCartIcon(cartCount: cartCount),
         ],
       ),

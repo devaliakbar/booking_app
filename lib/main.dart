@@ -2,6 +2,8 @@ import 'package:bookingapp/pages/home/bloc/data/home_repo.dart';
 import 'package:bookingapp/pages/home/bloc/home_bloc.dart';
 import 'package:bookingapp/pages/home/main_home.dart';
 import 'package:bookingapp/pages/splash_screen/splash_screen.dart';
+import 'package:bookingapp/wiidgets/search_interface/bloc/data/search_repo.dart';
+import 'package:bookingapp/wiidgets/search_interface/bloc/search_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,6 +19,11 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (BuildContext context) {
             return HomeBloc(HomeRepo());
+          },
+        ),
+        BlocProvider(
+          create: (BuildContext context) {
+            return SearchBloc(SearchRepo());
           },
         )
       ],

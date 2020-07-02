@@ -90,7 +90,7 @@ Widget _buildProduct(int index, List products) {
           child: createNormalText(products[index].category,
               truncate: true,
               size: AppTheme.fontSizeS,
-              color: AppTheme.blueFontColor),
+              color: AppTheme.secondaryBlueColor),
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 7),
@@ -125,8 +125,8 @@ Widget _buildProduct(int index, List products) {
                     }
                     _qtyController.text = currentQty.toString();
                   },
-                  color: Colors.black,
-                  splashColor: AppTheme.lightBlackColor,
+                  color: AppTheme.primaryBlueColor,
+                  splashColor: AppTheme.secondaryBlueColor,
                   padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                 ),
               ),
@@ -140,13 +140,17 @@ Widget _buildProduct(int index, List products) {
                   enabled: false,
                   controller: _qtyController,
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(
+                    color: AppTheme.primaryBlueColor,
+                  ),
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
                     contentPadding: EdgeInsets.only(bottom: 0),
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
+                      borderSide: BorderSide(
+                        color: AppTheme.primaryBlueColor,
+                      ),
                     ),
                   ),
                 ),
@@ -172,8 +176,8 @@ Widget _buildProduct(int index, List products) {
                     }
                     _qtyController.text = currentQty.toString();
                   },
-                  color: Colors.black,
-                  splashColor: AppTheme.lightBlackColor,
+                  color: AppTheme.primaryBlueColor,
+                  splashColor: AppTheme.secondaryBlueColor,
                   padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                 ),
               ),
@@ -191,13 +195,14 @@ Widget _buildProduct(int index, List products) {
             child: RaisedButton(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5.0),
-                  side: BorderSide(color: Colors.black, width: 1)),
+                  side: BorderSide(color: AppTheme.primaryBlueColor, width: 1)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Icon(
                     Icons.add_shopping_cart,
                     size: AppTheme.iconSizeXS,
+                    color: AppTheme.primaryBlueColor,
                   ),
                   SizedBox(
                     width: 1.5,

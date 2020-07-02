@@ -13,6 +13,7 @@ Widget buildCartIcon({String cartCount}) {
           child: Icon(
             Icons.shopping_cart,
             size: AppTheme.iconSizeS,
+            color: AppTheme.primaryBlueColor,
           ),
         ),
         cartCount == null
