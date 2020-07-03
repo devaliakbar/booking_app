@@ -1,7 +1,7 @@
 import 'package:bookingapp/utility/app_theme.dart';
 import 'package:bookingapp/utility/currency_format.dart';
-import 'package:bookingapp/wiidgets/loading_widget.dart';
-import 'package:bookingapp/wiidgets/normal_text.dart';
+import 'package:bookingapp/widgets/loading_widget.dart';
+import 'package:bookingapp/widgets/normal_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -16,31 +16,20 @@ Widget buildProducts(List products, double screenWidth) {
   }
 
   return Container(
-    margin: EdgeInsets.only(left: 10),
-    child: Column(
-      children: <Widget>[
-        Align(
-          alignment: Alignment.centerLeft,
-          child: createNormalText('Products'),
+    child: Container(
+      margin: EdgeInsets.only(left: 10),
+      height: (286.0 * noOfRows),
+      child: GridView.count(
+        childAspectRatio: ((screenWidth / 2) - 10) / 278,
+        physics: NeverScrollableScrollPhysics(),
+        crossAxisCount: 2,
+        children: List.generate(
+          productLenth,
+          (index) {
+            return _buildProduct(index, products);
+          },
         ),
-        SizedBox(
-          height: 7,
-        ),
-        Container(
-          height: (286.0 * noOfRows),
-          child: GridView.count(
-            childAspectRatio: ((screenWidth / 2) - 10) / 278,
-            physics: NeverScrollableScrollPhysics(),
-            crossAxisCount: 2,
-            children: List.generate(
-              productLenth,
-              (index) {
-                return _buildProduct(index, products);
-              },
-            ),
-          ),
-        )
-      ],
+      ),
     ),
   );
 }

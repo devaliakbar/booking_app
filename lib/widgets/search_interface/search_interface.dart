@@ -1,5 +1,5 @@
-import 'package:bookingapp/wiidgets/normal_text.dart';
-import 'package:bookingapp/wiidgets/search_interface/db/search_db_helper.dart';
+import 'package:bookingapp/widgets/normal_text.dart';
+import 'package:bookingapp/widgets/search_interface/db/search_db_helper.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -21,7 +21,9 @@ class _SearchInterfaceState extends State<SearchInterface> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppbar(),
-      body: _buldBody(),
+      body: SafeArea(
+        child: _buldBody(),
+      ),
     );
   }
 

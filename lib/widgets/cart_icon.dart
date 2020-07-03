@@ -1,5 +1,5 @@
 import 'package:bookingapp/utility/app_theme.dart';
-import 'package:bookingapp/wiidgets/normal_text.dart';
+import 'package:bookingapp/widgets/normal_text.dart';
 import 'package:flutter/material.dart';
 
 Widget buildCartIcon({String cartCount}) {

@@ -1,6 +1,9 @@
 import 'package:bookingapp/pages/home/bloc/data/home_repo.dart';
 import 'package:bookingapp/pages/home/bloc/home_bloc.dart';
 import 'package:bookingapp/pages/home/main_home.dart';
+import 'package:bookingapp/pages/products/bloc/data/products_repo.dart';
+import 'package:bookingapp/pages/products/bloc/products_bloc.dart';
+import 'package:bookingapp/pages/products/products.dart';
 import 'package:bookingapp/pages/splash_screen/splash_screen.dart';
 
 import 'package:flutter/material.dart';
@@ -20,6 +23,11 @@ class MyApp extends StatelessWidget {
             return HomeBloc(HomeRepo());
           },
         ),
+        BlocProvider(
+          create: (BuildContext context) {
+            return ProductsBloc(ProductsRepo());
+          },
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -27,6 +35,7 @@ class MyApp extends StatelessWidget {
         routes: {
           SplashScreen.myRoute: (BuildContext context) => SplashScreen(),
           MainHome.myRoute: (BuildContext context) => MainHome(),
+          Products.myRoute: (BuildContext context) => Products(),
         },
       ),
     );

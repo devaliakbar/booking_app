@@ -1,55 +1,13 @@
-import 'package:bookingapp/pages/home/bloc/data/home_model.dart';
+import 'package:bookingapp/pages/products/bloc/data/products_model.dart';
+import 'package:bookingapp/pages/products/product_helper.dart';
 
-class HomeRepo {
-  Future<HomePageDatas> getHomePageDatas() async {
-//FETCH FROM SERVER
+class ProductsRepo {
+  Future<ProductsDatas> getProducts(ProductHelper productHelper) async {
+    //FETCH FROM SERVER
     await Future.delayed(Duration(seconds: 2));
 
     var jsonDecoded = {
-      "bannersPath": [
-        "https://www.dboyzfashion.com/wp-content/uploads/2016/06/adidas-originals-shoes-banner.jpg",
-        "https://i.pinimg.com/originals/18/d4/70/18d470b3a5acaf907fe121ca703fceff.jpg",
-        "https://kwietstorms.files.wordpress.com/2015/02/yeezy-adidas-banner1.jpg",
-      ],
       "cartCount": 3,
-      "categories": [
-        {
-          "id": "1",
-          "name": "Shoes",
-          "imagePath":
-              "https://www.pngfind.com/pngs/m/48-480758_jordan-shoes-png-best-jordan-shoes-transparent-png.png"
-        },
-        {
-          "id": "2",
-          "name": "Backpack",
-          "imagePath":
-              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwed6253fd/hi-res/AAUBA0006FA01_S20-BLK0001_01.png?sw=1000&sh=1250"
-        },
-        {
-          "id": "3",
-          "name": "Suits",
-          "imagePath":
-              "https://w7.pngwing.com/pngs/1005/532/png-transparent-tuxedo-suit-formal-wear-men-s-suits-black-notched-lapel-suit-blazer-illustration-men-suit-necktie-cartoon.png"
-        },
-        {
-          "id": "4",
-          "name": "T-Shirt",
-          "imagePath":
-              "https://i.ya-webdesign.com/images/navy-blue-tshirt-png-2.png"
-        },
-        {
-          "id": "5",
-          "name": "Shorts",
-          "imagePath":
-              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwc06e8780/hi-res/MO7215L0299_S20-V0060_01.png?sw=1000&sh=1250"
-        },
-        {
-          "id": "6",
-          "name": "Sunglasses",
-          "imagePath":
-              "https://pluspng.com/img-png/sunglass-png-aviator-sunglass-png-clipart-3381.png"
-        },
-      ],
       "items": [
         {
           "id": "1",
@@ -214,6 +172,6 @@ class HomeRepo {
 
     //  throw "Json Momova";
 
-    return HomePageDatas.fromJson(jsonDecoded);
+    return ProductsDatas.fromJson(jsonDecoded);
   }
 }

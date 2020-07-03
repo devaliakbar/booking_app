@@ -9,7 +9,7 @@ part 'home_event.dart';
 part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeRepo homeRepo;
+  final HomeRepo homeRepo;
   HomeBloc(this.homeRepo);
 
   @override
