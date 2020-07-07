@@ -21,7 +21,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppTheme.greyBackgroundColor,
       body: SafeArea(
         child: BlocConsumer(
           bloc: BlocProvider.of<HomeBloc>(context),
@@ -74,17 +74,27 @@ class Home extends StatelessWidget {
           children: <Widget>[
             buildSlider(homePageDatas.bannersPath),
             SizedBox(
-              height: 10,
+              height: 25,
+            ),
+            Divider(
+              height: 0,
+              thickness: 0.7,
+              color: AppTheme.lightBlackColor,
             ),
             buildCategoryList(homePageDatas.categories),
-            SizedBox(
-              height: 5,
+            Divider(
+              height: 0,
+              thickness: 0.7,
+              color: AppTheme.lightBlackColor,
             ),
             Container(
-              margin: EdgeInsets.only(left: 10, bottom: 7),
+              color: Colors.white,
+              margin: EdgeInsets.only(top: 20),
+              padding: EdgeInsets.all(10),
               child: Align(
                 alignment: Alignment.centerLeft,
-                child: createNormalText('Products'),
+                child:
+                    createNormalText('All Products', size: AppTheme.fontSizeL),
               ),
             ),
             buildProducts(
@@ -107,43 +117,64 @@ class Home extends StatelessWidget {
 
 //HEADER
   Widget _buildHeaderSections(BuildContext context, {String cartCount}) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 5),
-      child: Row(
-        children: <Widget>[
-          IconButton(
-              icon: Icon(
-                Icons.menu,
-                size: AppTheme.iconSizeS,
-                color: AppTheme.primaryBlueColor,
-              ),
-              onPressed: toggleMenu),
-          Expanded(
-            child: Container(
-                //child: createNormalText('Home', size: AppTheme.fontSizeXL),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          color: Colors.white,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 5),
+            child: Row(
+              children: <Widget>[
+                IconButton(
+                    icon: Icon(
+                      Icons.menu,
+                      size: AppTheme.iconSizeS,
+                      color: Colors.black,
+                    ),
+                    onPressed: toggleMenu),
+                Expanded(
+                  child: Container(
+                    child: createNormalText(
+                      'Explore',
+                      size: AppTheme.fontSizeXL,
+                    ),
+                  ),
                 ),
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              size: AppTheme.iconSizeS,
-              color: AppTheme.primaryBlueColor,
+                IconButton(
+                  icon: Icon(
+                    Icons.search,
+                    size: AppTheme.iconSizeS,
+                    color: Colors.black,
+                  ),
+                  onPressed: () async {
+                    final String searchResult = await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SearchInterface()),
+                    );
+                    if (searchResult != null) {
+                      Navigator.pushNamed(context, Products.myRoute,
+                          arguments: ProductHelper(
+                              operation: ProductHelper.SEARCH,
+                              query: searchResult));
+                    }
+                  },
+                ),
+                buildCartIcon(cartCount: cartCount),
+              ],
             ),
-            onPressed: () async {
-              final String searchResult = await Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => SearchInterface()),
-              );
-              if (searchResult != null) {
-                Navigator.pushNamed(context, Products.myRoute,
-                    arguments: ProductHelper(
-                        operation: ProductHelper.SEARCH, query: searchResult));
-              }
-            },
           ),
-          buildCartIcon(cartCount: cartCount),
-        ],
-      ),
+        ),
+        Divider(
+          height: 0,
+          thickness: 0.7,
+          color: AppTheme.lightBlackColor,
+        ),
+        SizedBox(
+          height: 10,
+        )
+      ],
     );
   }
 }

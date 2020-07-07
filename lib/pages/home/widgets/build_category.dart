@@ -2,7 +2,6 @@ import 'package:bookingapp/pages/home/bloc/data/home_model.dart';
 import 'package:bookingapp/pages/products/product_helper.dart';
 import 'package:bookingapp/pages/products/products.dart';
 import 'package:bookingapp/utility/app_theme.dart';
-import 'package:bookingapp/widgets/loading_widget.dart';
 import 'package:bookingapp/widgets/normal_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +9,7 @@ import 'package:flutter/material.dart';
 Widget buildCategoryList(List categories) {
   List cat1 = [];
   List cat2 = [];
-  if (categories.length > 3) {
+  if (categories.length > 8) {
     int split = categories.length;
     if (split % 2 != 0) {
       split = split + 1;
@@ -24,22 +23,20 @@ Widget buildCategoryList(List categories) {
   }
 
   return Container(
-    margin: EdgeInsets.symmetric(horizontal: 10),
+    color: Colors.white,
+    padding: EdgeInsets.all(10),
     child: Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            createNormalText('Categories'),
-            createNormalText('See All', color: AppTheme.yellowColor)
-          ],
+        Align(
+          alignment: Alignment.centerLeft,
+          child: createNormalText('Shop by Category', size: AppTheme.fontSizeL),
         ),
         SizedBox(
-          height: 7,
+          height: 10,
         ),
         Container(
-          height: 65,
+          height: 95,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: cat1.length,
@@ -55,14 +52,31 @@ Widget buildCategoryList(List categories) {
         cat2.length == 0
             ? Container()
             : Container(
-                height: 65,
+                height: 95,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: cat2.length,
                   itemBuilder: (BuildContext context, int index) =>
                       _buildCategoryItem(context, index, cat2),
                 ),
-              )
+              ),
+        SizedBox(
+          height: 8,
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            createNormalText('View all', color: AppTheme.lightBlackColor),
+            SizedBox(
+              width: 7,
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              color: AppTheme.lightBlackColor,
+              size: AppTheme.iconSizeXS,
+            )
+          ],
+        ),
       ],
     ),
   );
@@ -82,42 +96,35 @@ Widget _buildCategoryItem(BuildContext context, int index, List categories) {
       );
     },
     child: Container(
-      margin: EdgeInsets.only(right: 10),
-      width: 200,
-      padding: EdgeInsets.all(5),
-      decoration: BoxDecoration(
-        color: AppTheme.greyBackgroundColor,
-        borderRadius: BorderRadius.circular(5),
-      ),
-      child: Row(
-        children: <Widget>[
-          Container(
-            margin: EdgeInsets.only(right: 5),
-            width: 70,
-            height: 65,
-            child: CachedNetworkImage(
-              imageBuilder: (context, imageProvider) => Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: imageProvider,
-                    fit: BoxFit.scaleDown,
+      width: 90,
+      margin: EdgeInsets.symmetric(horizontal: 10),
+      child: Center(
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: 70,
+              height: 70,
+              child: CachedNetworkImage(
+                imageBuilder: (context, imageProvider) => Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(90),
+                    image: DecorationImage(
+                      image: imageProvider,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
-              ),
-              imageUrl: category.imagePath,
-              placeholder: (context, url) => showLoading(),
-              errorWidget: (context, url, error) => Icon(
-                Icons.person,
-                color: Colors.black,
+                imageUrl: category.imagePath,
+                placeholder: (context, url) => CircularProgressIndicator(),
+                errorWidget: (context, url, error) => Icon(
+                  Icons.person,
+                  color: Colors.black,
+                ),
               ),
             ),
-          ),
-          Expanded(
-            child: Center(
-              child: createNormalText(category.name, truncate: true),
-            ),
-          )
-        ],
+            createNormalText(category.name, truncate: true)
+          ],
+        ),
       ),
     ),
   );

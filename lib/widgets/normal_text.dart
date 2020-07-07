@@ -9,7 +9,7 @@ Widget createNormalText(String string,
     bool alignRight = false}) {
   size = size == null ? AppTheme.fontSizeM : size;
   if (color == null) {
-    color = AppTheme.primaryBlueColor;
+    color = Colors.black;
   }
 
   TextOverflow overflowStyle = TextOverflow.visible;

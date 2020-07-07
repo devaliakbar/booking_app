@@ -11,9 +11,9 @@ Widget buildCartIcon({String cartCount}) {
         Align(
           alignment: Alignment.center,
           child: Icon(
-            Icons.shopping_cart,
+            Icons.card_giftcard,
             size: AppTheme.iconSizeS,
-            color: AppTheme.primaryBlueColor,
+            color: Colors.black,
           ),
         ),
         cartCount == null
