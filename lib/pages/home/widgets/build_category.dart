@@ -30,7 +30,9 @@ Widget buildCategoryList(List categories) {
       children: <Widget>[
         Align(
           alignment: Alignment.centerLeft,
-          child: createNormalText('Shop by Category', size: AppTheme.fontSizeL),
+          child: createNormalText(
+            'Shop by Category',
+          ),
         ),
         SizedBox(
           height: 10,
@@ -66,7 +68,8 @@ Widget buildCategoryList(List categories) {
         Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            createNormalText('View all', color: AppTheme.lightBlackColor),
+            createNormalText('View all',
+                color: AppTheme.lightBlackColor, size: AppTheme.fontSizeS),
             SizedBox(
               width: 7,
             ),
@@ -97,7 +100,7 @@ Widget _buildCategoryItem(BuildContext context, int index, List categories) {
     },
     child: Container(
       width: 90,
-      margin: EdgeInsets.symmetric(horizontal: 10),
+      margin: EdgeInsets.symmetric(horizontal: 1),
       child: Center(
         child: Column(
           children: <Widget>[
@@ -122,7 +125,8 @@ Widget _buildCategoryItem(BuildContext context, int index, List categories) {
                 ),
               ),
             ),
-            createNormalText(category.name, truncate: true)
+            createNormalText(category.name,
+                truncate: true, size: AppTheme.fontSizeS)
           ],
         ),
       ),

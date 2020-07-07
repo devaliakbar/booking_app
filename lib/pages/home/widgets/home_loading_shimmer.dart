@@ -20,61 +20,87 @@ Widget showHomeLoadingShimmer() {
         ),
       ),
       SizedBox(
-        height: 10,
+        height: 40,
       ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Shimmer.fromColors(
-            baseColor: Colors.grey[300],
-            highlightColor: Colors.grey[100],
-            child: Container(
-              margin: EdgeInsets.only(left: 10, bottom: 10),
-              height: 10,
-              width: 70,
-              color: Colors.white,
-            ),
+      Align(
+        alignment: Alignment.centerLeft,
+        child: Shimmer.fromColors(
+          baseColor: Colors.grey[300],
+          highlightColor: Colors.grey[100],
+          child: Container(
+            margin: EdgeInsets.only(left: 10, bottom: 15),
+            height: 10,
+            width: 130,
+            color: Colors.white,
           ),
-          Shimmer.fromColors(
-            baseColor: Colors.grey[300],
-            highlightColor: Colors.grey[100],
-            child: Container(
-              margin: EdgeInsets.only(right: 10, bottom: 10),
-              height: 10,
-              width: 70,
-              color: Colors.white,
-            ),
-          ),
-        ],
+        ),
       ),
       Container(
         margin: EdgeInsets.symmetric(horizontal: 10),
         height: 65,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Expanded(
+            Container(
+              width: 70,
+              height: 70,
               child: Shimmer.fromColors(
                 baseColor: Colors.grey[300],
                 highlightColor: Colors.grey[100],
                 child: Container(
+                  width: 70,
+                  height: 70,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(5),
+                    borderRadius: BorderRadius.circular(70),
                   ),
                 ),
               ),
             ),
-            SizedBox(
-              width: 10,
-            ),
-            Expanded(
+            Container(
+              width: 70,
+              height: 70,
               child: Shimmer.fromColors(
                 baseColor: Colors.grey[300],
                 highlightColor: Colors.grey[100],
                 child: Container(
+                  width: 70,
+                  height: 70,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(5),
+                    borderRadius: BorderRadius.circular(70),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              width: 70,
+              height: 70,
+              child: Shimmer.fromColors(
+                baseColor: Colors.grey[300],
+                highlightColor: Colors.grey[100],
+                child: Container(
+                  width: 70,
+                  height: 70,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(70),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              width: 70,
+              height: 70,
+              child: Shimmer.fromColors(
+                baseColor: Colors.grey[300],
+                highlightColor: Colors.grey[100],
+                child: Container(
+                  width: 70,
+                  height: 70,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(70),
                   ),
                 ),
               ),
@@ -83,36 +109,74 @@ Widget showHomeLoadingShimmer() {
         ),
       ),
       SizedBox(
-        height: 10,
+        height: 30,
       ),
       Container(
         margin: EdgeInsets.symmetric(horizontal: 10),
         height: 65,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Expanded(
+            Container(
+              width: 70,
+              height: 70,
               child: Shimmer.fromColors(
                 baseColor: Colors.grey[300],
                 highlightColor: Colors.grey[100],
                 child: Container(
+                  width: 70,
+                  height: 70,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(5),
+                    borderRadius: BorderRadius.circular(70),
                   ),
                 ),
               ),
             ),
-            SizedBox(
-              width: 10,
-            ),
-            Expanded(
+            Container(
+              width: 70,
+              height: 70,
               child: Shimmer.fromColors(
                 baseColor: Colors.grey[300],
                 highlightColor: Colors.grey[100],
                 child: Container(
+                  width: 70,
+                  height: 70,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(5),
+                    borderRadius: BorderRadius.circular(70),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              width: 70,
+              height: 70,
+              child: Shimmer.fromColors(
+                baseColor: Colors.grey[300],
+                highlightColor: Colors.grey[100],
+                child: Container(
+                  width: 70,
+                  height: 70,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(70),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              width: 70,
+              height: 70,
+              child: Shimmer.fromColors(
+                baseColor: Colors.grey[300],
+                highlightColor: Colors.grey[100],
+                child: Container(
+                  width: 70,
+                  height: 70,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(70),
                   ),
                 ),
               ),
@@ -121,7 +185,23 @@ Widget showHomeLoadingShimmer() {
         ),
       ),
       SizedBox(
-        height: 10,
+        height: 30,
+      ),
+      Container(
+        margin: EdgeInsets.only(left: 10),
+        child: Shimmer.fromColors(
+          baseColor: Colors.grey[300],
+          highlightColor: Colors.grey[100],
+          child: Container(
+            margin: EdgeInsets.only(right: 10, bottom: 10),
+            height: 10,
+            width: 80,
+            color: Colors.white,
+          ),
+        ),
+      ),
+      SizedBox(
+        height: 60,
       ),
       Align(
         alignment: Alignment.centerLeft,
@@ -133,7 +213,7 @@ Widget showHomeLoadingShimmer() {
             child: Container(
               margin: EdgeInsets.only(right: 10, bottom: 10),
               height: 10,
-              width: 70,
+              width: 110,
               color: Colors.white,
             ),
           ),
@@ -151,7 +231,7 @@ Widget showHomeLoadingShimmer() {
 
 Widget _buildShimmingList(context) {
   return Container(
-    height: 278,
+    height: 372,
     margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
     child: Row(
       children: <Widget>[
@@ -162,26 +242,18 @@ Widget _buildShimmingList(context) {
               borderRadius: BorderRadius.circular(10),
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Shimmer.fromColors(
                   baseColor: Colors.grey[300],
                   highlightColor: Colors.grey[100],
                   child: Container(
                     margin: EdgeInsets.all(10),
-                    height: 80,
+                    height: 180,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5),
                     ),
-                  ),
-                ),
-                Shimmer.fromColors(
-                  baseColor: Colors.grey[300],
-                  highlightColor: Colors.grey[100],
-                  child: Container(
-                    margin: EdgeInsets.only(left: 50, right: 50, bottom: 10),
-                    height: 10,
-                    color: Colors.white,
                   ),
                 ),
                 Shimmer.fromColors(
@@ -234,26 +306,18 @@ Widget _buildShimmingList(context) {
               borderRadius: BorderRadius.circular(10),
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Shimmer.fromColors(
                   baseColor: Colors.grey[300],
                   highlightColor: Colors.grey[100],
                   child: Container(
                     margin: EdgeInsets.all(10),
-                    height: 80,
+                    height: 180,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5),
                     ),
-                  ),
-                ),
-                Shimmer.fromColors(
-                  baseColor: Colors.grey[300],
-                  highlightColor: Colors.grey[100],
-                  child: Container(
-                    margin: EdgeInsets.only(left: 50, right: 50, bottom: 10),
-                    height: 10,
-                    color: Colors.white,
                   ),
                 ),
                 Shimmer.fromColors(

@@ -114,7 +114,7 @@ class _ProductsState extends State<Products> {
           Expanded(
             child: Container(
               child: createNormalText(passedDetails.query,
-                  truncate: true, size: AppTheme.fontSizeXL),
+                  truncate: true, size: AppTheme.fontSizeL),
             ),
           ),
           IconButton(

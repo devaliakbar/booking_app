@@ -20,9 +20,9 @@ Widget buildProducts(List products, double screenWidth) {
     color: Colors.white,
     child: Container(
       margin: EdgeInsets.only(left: 10),
-      height: (380.0 * noOfRows),
+      height: (372.0 * noOfRows),
       child: GridView.count(
-        childAspectRatio: ((screenWidth / 2) - 10) / 368,
+        childAspectRatio: ((screenWidth / 2) - 10) / 358,
         physics: NeverScrollableScrollPhysics(),
         crossAxisCount: 2,
         children: List.generate(
@@ -39,23 +39,24 @@ Widget buildProducts(List products, double screenWidth) {
 Widget _buildProduct(int index, List products, double containerWidth) {
   TextEditingController _qtyController = TextEditingController();
   _qtyController.text = products[index].cartQty.round().toString();
-  return Stack(
-    children: <Widget>[
-      Container(
-        decoration: BoxDecoration(
-          border: Border(
-            left: BorderSide(
-              width: 1.5,
-              color: AppTheme.greyBackgroundColor,
-            ),
-          ),
-          color: Colors.white,
+  return Container(
+    decoration: BoxDecoration(
+      border: Border(
+        left: BorderSide(
+          width: 1.5,
+          color: AppTheme.greyBackgroundColor,
         ),
-        margin: EdgeInsets.only(bottom: 10, right: 10),
-        child: Column(
-          children: <Widget>[
+      ),
+      color: Colors.white,
+    ),
+    margin: EdgeInsets.only(bottom: 10, right: 10),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        Stack(
+          children: [
             Container(
-              height: 200,
+              height: containerWidth,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
               ),
@@ -76,150 +77,143 @@ Widget _buildProduct(int index, List products, double containerWidth) {
                 ),
               ),
             ),
-            SizedBox(
-              height: 5,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: createNormalText(
-                    products[index].name + ' / ' + products[index].brand,
-                    truncate: true),
-              ),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: createNormalText(
-                    convertToCurrency(products[index].price.toString()),
-                    boldText: true,
-                    truncate: true),
-              ),
-            ),
-            Divider(
-              color: AppTheme.lightBlackColor,
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
-                createNormalText('Quantity', size: AppTheme.fontSizeS),
-                SizedBox(
-                  width: 33.0,
-                  height: 30.0,
-                  child: RaisedButton(
-                    child: createNormalText('-',
-                        color: Colors.white,
-                        size: AppTheme.fontSizeS,
-                        boldText: true),
-                    onPressed: () {
-                      int currentQty = int.parse(_qtyController.text);
-                      if (currentQty != 0) {
-                        currentQty--;
-                      }
-                      _qtyController.text = currentQty.toString();
-                    },
-                    color: Colors.black,
-                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+            Positioned(
+              bottom: 7,
+              left: 0,
+              child: Stack(
+                children: [
+                  Container(
+                    height: 30,
+                    width: containerWidth - (containerWidth / 3),
+                    child: CustomPaint(
+                      painter: DrawTriangle(),
+                    ),
                   ),
+                  Container(
+                    padding: EdgeInsets.only(
+                      left: 5,
+                      right: 10,
+                    ),
+                    height: 30,
+                    width: containerWidth - (containerWidth / 3),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: createNormalText(products[index].category,
+                          size: AppTheme.fontSizeXS, truncate: true),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 5),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: createNormalText(
+                products[index].name + ' / ' + products[index].brand,
+                truncate: true,
+                size: AppTheme.fontSizeXS),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 5),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: createNormalText(
+                convertToCurrency(products[index].price.toString()),
+                boldText: true,
+                truncate: true,
+                size: AppTheme.fontSizeS),
+          ),
+        ),
+        Divider(
+          color: AppTheme.lightBlackColor,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            createNormalText('Quantity', size: AppTheme.fontSizeXS),
+            SizedBox(
+              width: 33.0,
+              height: 30.0,
+              child: RaisedButton(
+                child: createNormalText('-',
+                    color: Colors.white,
+                    size: AppTheme.fontSizeS,
+                    boldText: true),
+                onPressed: () {
+                  int currentQty = int.parse(_qtyController.text);
+                  if (currentQty != 0) {
+                    currentQty--;
+                  }
+                  _qtyController.text = currentQty.toString();
+                },
+                color: Colors.black,
+                padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+              ),
+            ),
+            Container(
+              width: 33.0,
+              height: 30,
+              child: TextField(
+                enabled: false,
+                controller: _qtyController,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: AppTheme.fontSizeXS,
+                  color: AppTheme.primaryBlueColor,
                 ),
-                Container(
-                  width: 33.0,
-                  height: 30,
-                  child: TextField(
-                    enabled: false,
-                    controller: _qtyController,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  contentPadding: EdgeInsets.only(bottom: 0),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(
                       color: AppTheme.primaryBlueColor,
                     ),
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      contentPadding: EdgeInsets.only(bottom: 0),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: AppTheme.primaryBlueColor,
-                        ),
-                      ),
-                    ),
                   ),
                 ),
-                SizedBox(
-                  width: 33.0,
-                  height: 30,
-                  child: RaisedButton(
-                    child: createNormalText('+',
-                        color: Colors.white,
-                        size: AppTheme.fontSizeS,
-                        boldText: true),
-                    onPressed: () {
-                      int currentQty = int.parse(_qtyController.text);
-                      if (currentQty != 100) {
-                        currentQty++;
-                      }
-                      _qtyController.text = currentQty.toString();
-                    },
-                    color: Colors.black,
-                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  ),
-                ),
-              ],
+              ),
             ),
             SizedBox(
-              height: 10,
-            ),
-            SizedBox(
-              width: double.infinity,
+              width: 33.0,
+              height: 30,
               child: RaisedButton(
-                child: createNormalText('ADD TO CART', color: Colors.white),
-                onPressed: () {},
+                child: createNormalText('+',
+                    color: Colors.white,
+                    size: AppTheme.fontSizeS,
+                    boldText: true),
+                onPressed: () {
+                  int currentQty = int.parse(_qtyController.text);
+                  if (currentQty != 100) {
+                    currentQty++;
+                  }
+                  _qtyController.text = currentQty.toString();
+                },
                 color: Colors.black,
-                elevation: 0,
-                padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-              ),
-            )
-          ],
-        ),
-      ),
-      Positioned(
-        bottom: 185,
-        left: 0,
-        child: Stack(
-          children: [
-            Container(
-              height: 30,
-              width: containerWidth - (containerWidth / 3),
-              child: CustomPaint(
-                painter: DrawTriangle(),
+                padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
               ),
             ),
-            Container(
-              padding: EdgeInsets.only(
-                left: 5,
-                right: 10,
-              ),
-              height: 30,
-              width: containerWidth - (containerWidth / 3),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: createNormalText(products[index].category,
-                    size: AppTheme.fontSizeXS, truncate: true),
-              ),
-            )
           ],
         ),
-      ),
-    ],
+        SizedBox(
+          width: double.infinity,
+          child: RaisedButton(
+            child: createNormalText('ADD TO CART',
+                color: Colors.white, size: AppTheme.fontSizeS),
+            onPressed: () {},
+            color: Colors.black,
+            elevation: 0,
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          ),
+        )
+      ],
+    ),
   );
+  ;
 }
 
 class DrawTriangle extends CustomPainter {

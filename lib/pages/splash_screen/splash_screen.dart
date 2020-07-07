@@ -16,7 +16,7 @@ class SplashScreen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Text("Jose"),
+          Text("Belllab"),
         ],
       ),
     ));

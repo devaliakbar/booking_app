@@ -93,8 +93,9 @@ class Home extends StatelessWidget {
               padding: EdgeInsets.all(10),
               child: Align(
                 alignment: Alignment.centerLeft,
-                child:
-                    createNormalText('All Products', size: AppTheme.fontSizeL),
+                child: createNormalText(
+                  'All Products',
+                ),
               ),
             ),
             buildProducts(
@@ -137,7 +138,7 @@ class Home extends StatelessWidget {
                   child: Container(
                     child: createNormalText(
                       'Explore',
-                      size: AppTheme.fontSizeXL,
+                      size: AppTheme.fontSizeL,
                     ),
                   ),
                 ),

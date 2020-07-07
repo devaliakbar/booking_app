@@ -11,177 +11,140 @@ class ProductsRepo {
       "items": [
         {
           "id": "1",
-          "name": "White",
-          "brand": "Gigi",
-          "category": "Shoes",
-          "price": 400.00,
+          "name": "Mutton Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 10.00,
           "cartQty": 1,
           "imagePath":
-              "https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=%5B490%2C165%5D&w=1000&h=1333&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2020%2F04%2F30%2Fgigi-hadid-8.jpg"
+              "https://sambadenglish.com/wp-content/uploads/2017/06/18582577_1310254749028670_4316696463441352313_n-1.jpg"
         },
         {
-          "id": "7",
-          "name": "White",
-          "brand": "Gucci",
-          "category": "Sunglasses",
-          "price": 588.00,
-          "cartQty": 0,
-          "imagePath": "https://img.shopperboard.com/324843/56949098de04b.jpg"
-        },
-        {
-          "id": "6",
-          "name": "Grey",
-          "brand": "Gucci",
-          "category": "Sunglasses",
-          "price": 345.00,
-          "cartQty": 0,
-          "imagePath": "https://img.shopperboard.com/81069/5467272feee36.jpg"
-        },
-        {
-          "id": "5",
-          "name": "Cream",
-          "brand": "Gucci",
-          "category": "Sunglasses",
-          "price": 700.00,
+          "id": "2",
+          "name": "Chicken Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 5.00,
           "cartQty": 0,
           "imagePath":
-              "https://media1.popsugar-assets.com/files/thumbor/HtRumHb1PxzmuGKViWb5lhb2UZ4/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2019/02/27/659/n/1922564/6442633195d35b88_GettyImages-1132465769/i/Gigi-Hadid-Fashion-Week-Fall-2019.jpg"
+              "https://www.awesomecuisine.com/wp-content/uploads/2007/10/Chicken-Biryani_resized.jpg"
+        },
+        {
+          "id": "3",
+          "name": "Beef Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=750&h=393&url=https%3A%2F%2Fassets.marthastewart.com%2Fstyles%2Fwmax-750%2Fd40%2Fbeef-biryani-bobbi-lin-0041-d113199-0317%2Fbeef-biryani-bobbi-lin-0041-d113199-0317_horiz.jpg%3Fitok%3D2UuMyKHs"
         },
         {
           "id": "4",
-          "name": "Dark Grey",
-          "brand": "Gucci",
-          "category": "Shorts",
-          "price": 28.00,
-          "cartQty": 0,
+          "name": "Chow Mein",
+          "brand": "Shopname",
+          "category": "Vegetable",
+          "price": 12.00,
+          "cartQty": 1,
           "imagePath":
-              "https://cdn.lookastic.com/charcoal-bodycon-dress/classic-bodycon-dress-original-368956.jpg"
+              "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F201403-xl-vegetable-chow-mein.jpg%3Fitok%3D4c6b3_pt"
         },
         {
           "id": "5",
-          "name": "C Blue",
-          "brand": "Prada",
-          "category": "Sunglasses",
-          "price": 700.00,
+          "name": "Chicken Al Faham",
+          "brand": "Shopname",
+          "category": "Arabian",
+          "price": 11.00,
           "cartQty": 0,
-          "imagePath":
-              "https://5.imimg.com/data5/SL/KT/MY-16099781/tesla-blue-500x500.jpg"
-        },
-        {
-          "id": "1",
-          "name": "White",
-          "brand": "Gigi",
-          "category": "Shoes",
-          "price": 400.00,
-          "cartQty": 1,
-          "imagePath":
-              "https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=%5B490%2C165%5D&w=1000&h=1333&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2020%2F04%2F30%2Fgigi-hadid-8.jpg"
-        },
-        {
-          "id": "7",
-          "name": "White",
-          "brand": "Gucci",
-          "category": "Sunglasses",
-          "price": 588.00,
-          "cartQty": 0,
-          "imagePath": "https://img.shopperboard.com/324843/56949098de04b.jpg"
+          "imagePath": "https://i.ytimg.com/vi/HVi7xxQZDRQ/maxresdefault.jpg"
         },
         {
           "id": "6",
-          "name": "Grey",
-          "brand": "Gucci",
-          "category": "Sunglasses",
-          "price": 345.00,
+          "name": "Chicken Mandi",
+          "brand": "Shopname",
+          "category": "Arabian",
+          "price": 11.00,
           "cartQty": 0,
-          "imagePath": "https://img.shopperboard.com/81069/5467272feee36.jpg"
-        },
-        {
-          "id": "5",
-          "name": "Cream",
-          "brand": "Gucci",
-          "category": "Sunglasses",
-          "price": 700.00,
-          "cartQty": 0,
-          "imagePath":
-              "https://media1.popsugar-assets.com/files/thumbor/HtRumHb1PxzmuGKViWb5lhb2UZ4/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2019/02/27/659/n/1922564/6442633195d35b88_GettyImages-1132465769/i/Gigi-Hadid-Fashion-Week-Fall-2019.jpg"
-        },
-        {
-          "id": "4",
-          "name": "Dark Grey",
-          "brand": "Gucci",
-          "category": "Shorts",
-          "price": 28.00,
-          "cartQty": 0,
-          "imagePath":
-              "https://cdn.lookastic.com/charcoal-bodycon-dress/classic-bodycon-dress-original-368956.jpg"
-        },
-        {
-          "id": "5",
-          "name": "C Blue",
-          "brand": "Prada",
-          "category": "Sunglasses",
-          "price": 700.00,
-          "cartQty": 0,
-          "imagePath":
-              "https://5.imimg.com/data5/SL/KT/MY-16099781/tesla-blue-500x500.jpg"
-        },
-        {
-          "id": "1",
-          "name": "White",
-          "brand": "Gigi",
-          "category": "Shoes",
-          "price": 400.00,
-          "cartQty": 1,
-          "imagePath":
-              "https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=%5B490%2C165%5D&w=1000&h=1333&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2020%2F04%2F30%2Fgigi-hadid-8.jpg"
+          "imagePath": "https://i.ytimg.com/vi/WBXgmNkyMz4/maxresdefault.jpg"
         },
         {
           "id": "7",
-          "name": "White",
-          "brand": "Gucci",
-          "category": "Sunglasses",
-          "price": 588.00,
-          "cartQty": 0,
-          "imagePath": "https://img.shopperboard.com/324843/56949098de04b.jpg"
-        },
-        {
-          "id": "6",
-          "name": "Grey",
-          "brand": "Gucci",
-          "category": "Sunglasses",
-          "price": 345.00,
-          "cartQty": 0,
-          "imagePath": "https://img.shopperboard.com/81069/5467272feee36.jpg"
-        },
-        {
-          "id": "5",
-          "name": "Cream",
-          "brand": "Gucci",
-          "category": "Sunglasses",
-          "price": 700.00,
+          "name": "Beef Alfaham",
+          "brand": "Shopname",
+          "category": "Arabian",
+          "price": 11.00,
           "cartQty": 0,
           "imagePath":
-              "https://media1.popsugar-assets.com/files/thumbor/HtRumHb1PxzmuGKViWb5lhb2UZ4/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2019/02/27/659/n/1922564/6442633195d35b88_GettyImages-1132465769/i/Gigi-Hadid-Fashion-Week-Fall-2019.jpg"
+              "https://b.zmtcdn.com/data/reviews_photos/356/a222e3643f21fdb744e734b008d5f356_1551629842.jpg"
         },
         {
-          "id": "4",
-          "name": "Dark Grey",
-          "brand": "Gucci",
-          "category": "Shorts",
-          "price": 28.00,
+          "id": "8",
+          "name": "Mutton Mandi",
+          "brand": "Shopname",
+          "category": "Arabian",
+          "price": 11.00,
           "cartQty": 0,
           "imagePath":
-              "https://cdn.lookastic.com/charcoal-bodycon-dress/classic-bodycon-dress-original-368956.jpg"
+              "https://media-cdn.tripadvisor.com/media/photo-s/10/a6/83/a3/mutton-cooked-with-flavoured.jpg"
         },
         {
-          "id": "5",
-          "name": "C Blue",
-          "brand": "Prada",
-          "category": "Sunglasses",
-          "price": 700.00,
+          "id": "9",
+          "name": "Shawarma",
+          "brand": "Shopname",
+          "category": "Arabian",
+          "price": 5.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://c.ndtvimg.com/2020-01/tvr3pq48_shawarma_120x90_21_January_20.jpg"
+        },
+        {
+          "id": "10",
+          "name": "Chatti Pathiri",
+          "brand": "Shopname",
+          "category": "Snacks",
+          "price": 10.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://2.bp.blogspot.com/-iXhGNfH-yug/U7e4YFQ-0vI/AAAAAAAAi2M/zS7WxG726iM/s1600/chatti+pathil+1.jpg"
+        },
+        {
+          "id": "11",
+          "name": "Irachi Pathiri",
+          "brand": "Shopname",
+          "category": "Snacks",
+          "price": 1.00,
+          "cartQty": 1,
+          "imagePath": "https://i.ytimg.com/vi/GwsMOE6ngYo/maxresdefault.jpg"
+        },
+        {
+          "id": "12",
+          "name": "Unnakai",
+          "brand": "Shopname",
+          "category": "Snacks",
+          "price": 1.00,
           "cartQty": 0,
           "imagePath":
-              "https://5.imimg.com/data5/SL/KT/MY-16099781/tesla-blue-500x500.jpg"
+              "https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/2/2016/09/ThalasseryRestaurant.jpg?w=1200&h=628&fill=blur&fit=fill"
+        },
+        {
+          "id": "13",
+          "name": "Avocado Shake",
+          "brand": "Shopname",
+          "category": "Drinks",
+          "price": 15.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://www.thespruceeats.com/thmb/nFzB2C6IXkqwUk0NiT0LNyLs_OA=/1490x1490/smart/filters:no_upscale()/GettyImages-511024538-5afef110875db9003675c624.jpg"
+        },
+        {
+          "id": "14",
+          "name": "Tender Coconut",
+          "brand": "Shopname",
+          "category": "Drinks",
+          "price": 15.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://dinetable.com/wp-content/uploads/2016/02/Tender-Coconut-Milkshake4.jpg"
         },
       ]
     };

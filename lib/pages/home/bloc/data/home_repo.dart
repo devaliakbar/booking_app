@@ -3,185 +3,183 @@ import 'package:bookingapp/pages/home/bloc/data/home_model.dart';
 class HomeRepo {
   Future<HomePageDatas> getHomePageDatas() async {
 //FETCH FROM SERVER
-    await Future.delayed(Duration(milliseconds: 100));
+    await Future.delayed(Duration(seconds: 2));
 
     var jsonDecoded = {
       "bannersPath": [
-        "https://www.dboyzfashion.com/wp-content/uploads/2016/06/adidas-originals-shoes-banner.jpg",
-        "https://i.pinimg.com/originals/18/d4/70/18d470b3a5acaf907fe121ca703fceff.jpg",
-        "https://kwietstorms.files.wordpress.com/2015/02/yeezy-adidas-banner1.jpg",
+        "https://static.insydo.com/wp-content/uploads/2018/05/Sofitel-jbr-iftar-in-dubai-1280x670.jpg",
+        "https://www.visitdubai.com/-/media/dctcm/festivals/2020/ramadan/ramadan-sweets/hero/ramadan-sweets-hero-desktop-events-spotlight-1200x400%20copy.jpg",
+        "https://previews.123rf.com/images/mizina/mizina2001/mizina200100121/138116022-middle-eastern-arabic-food-dinner-table-meat-kebab-hummus-tabbouleh-salad-traditional-sauces-olives-.jpg",
       ],
       "cartCount": 3,
       "categories": [
         {
           "id": "1",
-          "name": "Women",
-          "imagePath":
-              "https://upload.wikimedia.org/wikipedia/commons/9/91/Gigi_Hadid._2015.jpg"
+          "name": "Biriyani",
+          "imagePath": "https://www.avacare.in/images/recipes/ambur-biryani.jpg"
         },
         {
           "id": "2",
-          "name": "Men",
+          "name": "Veg",
           "imagePath":
-              "https://i.pinimg.com/originals/61/1f/4a/611f4aea5e7def951de65b73badae5d9.png"
+              "https://images-gmi-pmc.edge-generalmills.com/5bce0f7f-53dc-4fe1-9331-dfb2fe038c69.jpg"
         },
         {
           "id": "3",
-          "name": "Suits",
+          "name": "Arabian",
           "imagePath":
-              "https://hdwallpaperim.com/wp-content/uploads/2017/08/26/172772-men-suits.jpg"
+              "https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-ugf25iqf3i0j6fmaic2586hsf0-20180213072845.Medi.jpeg"
         },
         {
           "id": "4",
-          "name": "T-Shirt",
+          "name": "Snacks",
           "imagePath":
-              "https://onpointfresh.com/wp-content/uploads/2020/01/46409342_2270792776494762_1646210547843201276_n-819x1024.jpg"
+              "https://www.grandecig.com/hs-fs/hubfs/images/blog_images/2019-Blog-Images/Savory_Snacks.jpg?width=734&name=Savory_Snacks.jpg"
         },
         {
           "id": "5",
-          "name": "Shorts",
+          "name": "Drinks",
           "imagePath":
-              "https://i.pinimg.com/564x/46/de/57/46de57d80c957626a6bdbad8976aa544.jpg"
-        },
-        {
-          "id": "6",
-          "name": "Sunglasses",
-          "imagePath":
-              "https://shadesdaddyblog.com/wp-content/uploads/2016/03/cm1.jpg"
-        },
-        {
-          "id": "4",
-          "name": "T-Shirt",
-          "imagePath":
-              "https://onpointfresh.com/wp-content/uploads/2020/01/46409342_2270792776494762_1646210547843201276_n-819x1024.jpg"
-        },
-        {
-          "id": "5",
-          "name": "Shorts",
-          "imagePath":
-              "https://i.pinimg.com/564x/46/de/57/46de57d80c957626a6bdbad8976aa544.jpg"
-        },
-        {
-          "id": "6",
-          "name": "Sunglasses",
-          "imagePath":
-              "https://shadesdaddyblog.com/wp-content/uploads/2016/03/cm1.jpg"
-        },
-        {
-          "id": "1",
-          "name": "Shoes",
-          "imagePath":
-              "https://www.bosshunting.com.au/wp-content/uploads/2020/03/Stefano-Bemer-Shoes-1-1027x560.jpg"
-        },
-        {
-          "id": "2",
-          "name": "Backpack",
-          "imagePath":
-              "https://i1.wp.com/rohayati.com/wp-content/uploads/2019/10/Women-Backpack-Cute.jpg?resize=1080%2C1024&ssl=1"
-        },
-        {
-          "id": "3",
-          "name": "Suits",
-          "imagePath":
-              "https://hdwallpaperim.com/wp-content/uploads/2017/08/26/172772-men-suits.jpg"
+              "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/beveragedaily.com/article/2020/03/31/beverage-webinar-today-what-drinks-do-consumers-want/10866454-1-eng-GB/Beverage-webinar-today-What-drinks-do-consumers-want.jpg"
         },
       ],
       "items": [
         {
           "id": "1",
-          "name": "White",
-          "brand": "Gigi",
-          "category": "Shoes",
-          "price": 400.00,
+          "name": "Mutton Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 10.00,
           "cartQty": 1,
           "imagePath":
-              "https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=%5B490%2C165%5D&w=1000&h=1333&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2020%2F04%2F30%2Fgigi-hadid-8.jpg"
-        },
-        {
-          "id": "7",
-          "name": "White",
-          "brand": "Gucci",
-          "category": "Sunglasses",
-          "price": 588.00,
-          "cartQty": 0,
-          "imagePath": "https://img.shopperboard.com/324843/56949098de04b.jpg"
-        },
-        {
-          "id": "6",
-          "name": "Grey",
-          "brand": "Gucci",
-          "category": "Sunglasses",
-          "price": 345.00,
-          "cartQty": 0,
-          "imagePath": "https://img.shopperboard.com/81069/5467272feee36.jpg"
-        },
-        {
-          "id": "5",
-          "name": "Cream",
-          "brand": "Gucci",
-          "category": "Sunglasses",
-          "price": 700.00,
-          "cartQty": 0,
-          "imagePath":
-              "https://media1.popsugar-assets.com/files/thumbor/HtRumHb1PxzmuGKViWb5lhb2UZ4/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2019/02/27/659/n/1922564/6442633195d35b88_GettyImages-1132465769/i/Gigi-Hadid-Fashion-Week-Fall-2019.jpg"
-        },
-        {
-          "id": "4",
-          "name": "Dark Grey",
-          "brand": "Gucci",
-          "category": "Shorts",
-          "price": 28.00,
-          "cartQty": 0,
-          "imagePath":
-              "https://cdn.lookastic.com/charcoal-bodycon-dress/classic-bodycon-dress-original-368956.jpg"
-        },
-        {
-          "id": "5",
-          "name": "C Blue",
-          "brand": "Prada",
-          "category": "Sunglasses",
-          "price": 700.00,
-          "cartQty": 0,
-          "imagePath":
-              "https://5.imimg.com/data5/SL/KT/MY-16099781/tesla-blue-500x500.jpg"
-        },
-        {
-          "id": "3",
-          "name": "Classic",
-          "brand": "Adidas",
-          "category": "Backpack",
-          "price": 58.00,
-          "cartQty": 1,
-          "imagePath":
-              "https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dwb6e1cfd0/hi-res/GF3197_S20-001_01.png?sw=400&sh=500"
-        },
-        {
-          "id": "9",
-          "name": "Men Black",
-          "brand": "Gucci",
-          "category": "Suits",
-          "price": 2900.00,
-          "cartQty": 0,
-          "imagePath": "https://pngimg.com/uploads/suit/suit_PNG93204.png"
-        },
-        {
-          "id": "10",
-          "name": "Essential",
-          "brand": "Brioni",
-          "category": "Suits",
-          "price": 3950,
-          "cartQty": 1,
-          "imagePath": "https://i.dlpng.com/static/png/299709_preview.png"
+              "https://sambadenglish.com/wp-content/uploads/2017/06/18582577_1310254749028670_4316696463441352313_n-1.jpg"
         },
         {
           "id": "2",
-          "name": "Men Blue",
-          "brand": "Adidas",
-          "category": "T-Shirt",
-          "price": 38.00,
+          "name": "Chicken Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 5.00,
           "cartQty": 0,
           "imagePath":
-              "https://i.ya-webdesign.com/images/navy-blue-tshirt-png-2.png"
+              "https://www.awesomecuisine.com/wp-content/uploads/2007/10/Chicken-Biryani_resized.jpg"
+        },
+        {
+          "id": "3",
+          "name": "Beef Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=750&h=393&url=https%3A%2F%2Fassets.marthastewart.com%2Fstyles%2Fwmax-750%2Fd40%2Fbeef-biryani-bobbi-lin-0041-d113199-0317%2Fbeef-biryani-bobbi-lin-0041-d113199-0317_horiz.jpg%3Fitok%3D2UuMyKHs"
+        },
+        {
+          "id": "4",
+          "name": "Chow Mein",
+          "brand": "Shopname",
+          "category": "Vegetable",
+          "price": 12.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F201403-xl-vegetable-chow-mein.jpg%3Fitok%3D4c6b3_pt"
+        },
+        {
+          "id": "5",
+          "name": "Chicken Al Faham",
+          "brand": "Shopname",
+          "category": "Arabian",
+          "price": 11.00,
+          "cartQty": 0,
+          "imagePath": "https://i.ytimg.com/vi/HVi7xxQZDRQ/maxresdefault.jpg"
+        },
+        {
+          "id": "6",
+          "name": "Chicken Mandi",
+          "brand": "Shopname",
+          "category": "Arabian",
+          "price": 11.00,
+          "cartQty": 0,
+          "imagePath": "https://i.ytimg.com/vi/WBXgmNkyMz4/maxresdefault.jpg"
+        },
+        {
+          "id": "7",
+          "name": "Beef Alfaham",
+          "brand": "Shopname",
+          "category": "Arabian",
+          "price": 11.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://b.zmtcdn.com/data/reviews_photos/356/a222e3643f21fdb744e734b008d5f356_1551629842.jpg"
+        },
+        {
+          "id": "8",
+          "name": "Mutton Mandi",
+          "brand": "Shopname",
+          "category": "Arabian",
+          "price": 11.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://media-cdn.tripadvisor.com/media/photo-s/10/a6/83/a3/mutton-cooked-with-flavoured.jpg"
+        },
+        {
+          "id": "9",
+          "name": "Shawarma",
+          "brand": "Shopname",
+          "category": "Arabian",
+          "price": 5.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://c.ndtvimg.com/2020-01/tvr3pq48_shawarma_120x90_21_January_20.jpg"
+        },
+        {
+          "id": "10",
+          "name": "Chatti Pathiri",
+          "brand": "Shopname",
+          "category": "Snacks",
+          "price": 10.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://2.bp.blogspot.com/-iXhGNfH-yug/U7e4YFQ-0vI/AAAAAAAAi2M/zS7WxG726iM/s1600/chatti+pathil+1.jpg"
+        },
+        {
+          "id": "11",
+          "name": "Irachi Pathiri",
+          "brand": "Shopname",
+          "category": "Snacks",
+          "price": 1.00,
+          "cartQty": 1,
+          "imagePath": "https://i.ytimg.com/vi/GwsMOE6ngYo/maxresdefault.jpg"
+        },
+        {
+          "id": "12",
+          "name": "Unnakai",
+          "brand": "Shopname",
+          "category": "Snacks",
+          "price": 1.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/2/2016/09/ThalasseryRestaurant.jpg?w=1200&h=628&fill=blur&fit=fill"
+        },
+        {
+          "id": "13",
+          "name": "Avocado Shake",
+          "brand": "Shopname",
+          "category": "Drinks",
+          "price": 15.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://www.thespruceeats.com/thmb/nFzB2C6IXkqwUk0NiT0LNyLs_OA=/1490x1490/smart/filters:no_upscale()/GettyImages-511024538-5afef110875db9003675c624.jpg"
+        },
+        {
+          "id": "14",
+          "name": "Tender Coconut",
+          "brand": "Shopname",
+          "category": "Drinks",
+          "price": 15.00,
+          "cartQty": 1,
+          "imagePath":
+              "https://dinetable.com/wp-content/uploads/2016/02/Tender-Coconut-Milkshake4.jpg"
         },
       ]
     };
