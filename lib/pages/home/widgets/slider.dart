@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 
 Widget buildSlider(List bannerPaths) {
   return Container(
-    margin: EdgeInsets.symmetric(horizontal: 20),
+    margin: EdgeInsets.symmetric(horizontal: 7),
     child: CarouselSlider(
       options: CarouselOptions(
-        height: 150.0,
+        height: 140.0,
         enableInfiniteScroll: true,
         autoPlayAnimationDuration: Duration(milliseconds: 800),
         autoPlay: true,

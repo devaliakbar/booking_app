@@ -4,44 +4,33 @@ import 'package:flutter/material.dart';
 
 Widget buildCartIcon({String cartCount}) {
   return Container(
-    height: 40,
-    width: 40,
-    child: Stack(
-      children: <Widget>[
-        Align(
-          alignment: Alignment.center,
-          child: Icon(
-            Icons.card_giftcard,
-            size: AppTheme.iconSizeS,
-            color: Colors.black,
+    margin: EdgeInsets.only(right: 15),
+    height: 45,
+    width: 68,
+    child: RaisedButton(
+      onPressed: () {},
+      elevation: 0,
+      padding: EdgeInsets.all(0),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(11),
+      ),
+      color: AppTheme.primaryGreenColor,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          Icon(
+            Icons.redeem,
+            size: AppTheme.iconSize,
+            color: Colors.white,
           ),
-        ),
-        cartCount == null
-            ? Container()
-            : cartCount == "0"
-                ? Container()
-                : Align(
-                    alignment: Alignment.topRight,
-                    child: Container(
-                      height: 23,
-                      width: 23,
-                      child: Stack(
-                        children: <Widget>[
-                          Icon(Icons.brightness_1,
-                              size: 23, color: AppTheme.yellowColor),
-                          Align(
-                            alignment: Alignment.topRight,
-                            child: Center(
-                              child: createNormalText(cartCount,
-                                  size: AppTheme.fontSizeXXXS,
-                                  color: Colors.white),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  )
-      ],
+          createNormalText('3', color: Colors.white)
+        ],
+      ),
     ),
   );
 }
+
+// cartCount == null
+//           ? Container()
+//           : cartCount == "0"
+//               ?

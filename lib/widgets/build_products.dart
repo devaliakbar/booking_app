@@ -19,16 +19,16 @@ Widget buildProducts(List products, double screenWidth) {
   return Container(
     color: Colors.white,
     child: Container(
-      margin: EdgeInsets.only(left: 10),
-      height: (372.0 * noOfRows),
+      margin: EdgeInsets.only(left: 15),
+      height: (338.0 * noOfRows),
       child: GridView.count(
-        childAspectRatio: ((screenWidth / 2) - 10) / 358,
+        childAspectRatio: ((screenWidth / 2) - 15) / 323,
         physics: NeverScrollableScrollPhysics(),
         crossAxisCount: 2,
         children: List.generate(
           productLenth,
           (index) {
-            return _buildProduct(index, products, (screenWidth / 2) - 10);
+            return _buildProduct(index, products, (screenWidth / 2) - 15);
           },
         ),
       ),
@@ -40,29 +40,17 @@ Widget _buildProduct(int index, List products, double containerWidth) {
   TextEditingController _qtyController = TextEditingController();
   _qtyController.text = products[index].cartQty.round().toString();
   return Container(
-    decoration: BoxDecoration(
-      border: Border(
-        left: BorderSide(
-          width: 1.5,
-          color: AppTheme.greyBackgroundColor,
-        ),
-      ),
-      color: Colors.white,
-    ),
-    margin: EdgeInsets.only(bottom: 10, right: 10),
+    margin: EdgeInsets.only(bottom: 10, right: 15),
     child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Stack(
           children: [
             Container(
               height: containerWidth,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-              ),
               child: CachedNetworkImage(
                 imageBuilder: (context, imageProvider) => Container(
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
                     image: DecorationImage(
                       image: imageProvider,
                       fit: BoxFit.cover,
@@ -77,38 +65,38 @@ Widget _buildProduct(int index, List products, double containerWidth) {
                 ),
               ),
             ),
-            Positioned(
-              bottom: 7,
-              left: 0,
-              child: Stack(
-                children: [
-                  Container(
-                    height: 30,
-                    width: containerWidth - (containerWidth / 3),
-                    child: CustomPaint(
-                      painter: DrawTriangle(),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(
-                      left: 5,
-                      right: 10,
-                    ),
-                    height: 30,
-                    width: containerWidth - (containerWidth / 3),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: createNormalText(products[index].category,
-                          size: AppTheme.fontSizeXS, truncate: true),
-                    ),
-                  )
-                ],
-              ),
-            ),
+            // Positioned(
+            //   bottom: 7,
+            //   left: 0,
+            //   child: Stack(
+            //     children: [
+            //       Container(
+            //         height: 30,
+            //         width: containerWidth - (containerWidth / 3),
+            //         child: CustomPaint(
+            //           painter: DrawTriangle(),
+            //         ),
+            //       ),
+            //       Container(
+            //         padding: EdgeInsets.only(
+            //           left: 5,
+            //           right: 10,
+            //         ),
+            //         height: 30,
+            //         width: containerWidth - (containerWidth / 3),
+            //         child: Align(
+            //           alignment: Alignment.centerLeft,
+            //           child: createNormalText(products[index].category,
+            //               size: AppTheme.fontSizeXS, truncate: true),
+            //         ),
+            //       )
+            //     ],
+            //   ),
+            // ),
           ],
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 5),
+          padding: EdgeInsets.only(left: 5, right: 5, top: 5),
           child: Align(
             alignment: Alignment.centerLeft,
             child: createNormalText(
@@ -118,96 +106,138 @@ Widget _buildProduct(int index, List products, double containerWidth) {
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 5),
+          padding: EdgeInsets.all(5),
           child: Align(
             alignment: Alignment.centerLeft,
             child: createNormalText(
                 convertToCurrency(products[index].price.toString()),
-                boldText: true,
                 truncate: true,
-                size: AppTheme.fontSizeS),
+                boldText: true,
+                color: AppTheme.primaryGreenColor,
+                size: AppTheme.fontSizeXS),
           ),
         ),
-        Divider(
-          color: AppTheme.lightBlackColor,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            createNormalText('Quantity', size: AppTheme.fontSizeXS),
-            SizedBox(
-              width: 33.0,
-              height: 30.0,
-              child: RaisedButton(
-                child: createNormalText('-',
-                    color: Colors.white,
-                    size: AppTheme.fontSizeS,
-                    boldText: true),
-                onPressed: () {
-                  int currentQty = int.parse(_qtyController.text);
-                  if (currentQty != 0) {
-                    currentQty--;
-                  }
-                  _qtyController.text = currentQty.toString();
-                },
-                color: Colors.black,
-                padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-              ),
-            ),
-            Container(
-              width: 33.0,
-              height: 30,
-              child: TextField(
-                enabled: false,
-                controller: _qtyController,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: AppTheme.fontSizeXS,
-                  color: AppTheme.primaryBlueColor,
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Padding(
+            padding: EdgeInsets.only(left: 5),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                SizedBox(
+                  width: 45.0,
+                  height: 30.0,
+                  child: RaisedButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(5),
+                        topLeft: Radius.circular(5),
+                      ),
+                    ),
+                    elevation: 0,
+                    onPressed: () {
+                      int currentQty = int.parse(_qtyController.text);
+                      if (currentQty != 0) {
+                        currentQty--;
+                      }
+                      _qtyController.text = currentQty.toString();
+                    },
+                    child: createNormalText('-',
+                        color: Colors.black,
+                        size: AppTheme.fontSizeS,
+                        boldText: true),
+                  ),
                 ),
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  contentPadding: EdgeInsets.only(bottom: 0),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(
+                Container(
+                  width: 53.0,
+                  height: 29,
+                  child: TextField(
+                    enabled: false,
+                    controller: _qtyController,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: AppTheme.fontSizeXS,
                       color: AppTheme.primaryBlueColor,
+                    ),
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      contentPadding: EdgeInsets.only(bottom: 0),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(0.0),
+                      ),
                     ),
                   ),
                 ),
-              ),
+                SizedBox(
+                  width: 45.0,
+                  height: 30.0,
+                  child: RaisedButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(5),
+                        topRight: Radius.circular(5),
+                      ),
+                    ),
+                    elevation: 0,
+                    onPressed: () {
+                      int currentQty = int.parse(_qtyController.text);
+                      if (currentQty != 100) {
+                        currentQty++;
+                      }
+                      _qtyController.text = currentQty.toString();
+                    },
+                    child: createNormalText('+',
+                        color: Colors.black,
+                        size: AppTheme.fontSizeS,
+                        boldText: true),
+                  ),
+                ),
+              ],
             ),
-            SizedBox(
-              width: 33.0,
-              height: 30,
-              child: RaisedButton(
-                child: createNormalText('+',
-                    color: Colors.white,
-                    size: AppTheme.fontSizeS,
-                    boldText: true),
-                onPressed: () {
-                  int currentQty = int.parse(_qtyController.text);
-                  if (currentQty != 100) {
-                    currentQty++;
-                  }
-                  _qtyController.text = currentQty.toString();
-                },
-                color: Colors.black,
-                padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-              ),
-            ),
-          ],
+          ),
         ),
         SizedBox(
-          width: double.infinity,
-          child: RaisedButton(
-            child: createNormalText('ADD TO CART',
-                color: Colors.white, size: AppTheme.fontSizeS),
-            onPressed: () {},
-            color: Colors.black,
-            elevation: 0,
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          height: 3,
+        ),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Container(
+            width: 148,
+            padding: EdgeInsets.only(left: 5),
+            child: RaisedButton(
+              padding: EdgeInsets.only(right: 5),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Center(
+                      child: createNormalText('Add To Cart',
+                          size: AppTheme.fontSizeXS),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: AppTheme.primaryGreenColor,
+                      borderRadius: BorderRadius.circular(3),
+                    ),
+                    margin: EdgeInsets.symmetric(vertical: 5),
+                    height: 30,
+                    width: 30,
+                    child: Icon(
+                      Icons.chevron_right,
+                      color: Colors.white,
+                    ),
+                  )
+                ],
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(5),
+                ),
+              ),
+              elevation: 0,
+              onPressed: () {},
+            ),
           ),
         )
       ],

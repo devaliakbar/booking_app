@@ -1,16 +1,16 @@
 import 'package:bookingapp/pages/home/bloc/data/home_model.dart';
 import 'package:bookingapp/pages/home/bloc/home_bloc.dart';
 import 'package:bookingapp/pages/home/widgets/build_category.dart';
-import 'package:bookingapp/widgets/build_products.dart';
 import 'package:bookingapp/pages/home/widgets/home_loading_shimmer.dart';
 import 'package:bookingapp/pages/home/widgets/slider.dart';
 import 'package:bookingapp/pages/products/product_helper.dart';
 import 'package:bookingapp/pages/products/products.dart';
 import 'package:bookingapp/utility/app_theme.dart';
+import 'package:bookingapp/widgets/build_products.dart';
 import 'package:bookingapp/widgets/cart_icon.dart';
 import 'package:bookingapp/widgets/normal_text.dart';
+import 'package:bookingapp/widgets/search_field.dart';
 import 'package:bookingapp/widgets/search_interface/search_interface.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,7 +21,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.greyBackgroundColor,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: BlocConsumer(
           bloc: BlocProvider.of<HomeBloc>(context),
@@ -64,39 +64,74 @@ class Home extends StatelessWidget {
   Widget _buildBody(HomePageDatas homePageDatas, BuildContext context) {
     return Column(
       children: <Widget>[
-        _buildHeaderSections(context,
-            cartCount: homePageDatas.cartCount.toString()),
+        _buildHeaderSections(
+          context,
+          cartCount: homePageDatas.cartCount.toString(),
+        ),
         SizedBox(
-          height: 5,
+          height: 10,
         ),
         Expanded(
             child: ListView(
           children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(left: 15),
+              child: createNormalText('Good Morning!', boldText: true),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 15, top: 3, bottom: 10),
+              child: createNormalText(
+                  'Let\'s order some food and have a delicious day',
+                  color: AppTheme.secondaryBlackColor,
+                  size: AppTheme.fontSizeXS),
+            ),
+            InkWell(
+              onTap: () async {
+                final String searchResult = await Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SearchInterface()),
+                );
+                if (searchResult != null) {
+                  Navigator.pushNamed(context, Products.myRoute,
+                      arguments: ProductHelper(
+                          operation: ProductHelper.SEARCH,
+                          query: searchResult));
+                }
+              },
+              child: buildSearchField(),
+            ),
+            SizedBox(
+              height: 13,
+            ),
             buildSlider(homePageDatas.bannersPath),
             SizedBox(
-              height: 25,
+              height: 13,
             ),
-            Divider(
-              height: 0,
-              thickness: 0.7,
-              color: AppTheme.lightBlackColor,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  createNormalText('Categories', boldText: true),
+                  createNormalText('View All',
+                      color: AppTheme.secondaryBlackColor,
+                      size: AppTheme.fontSizeXS)
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 13,
             ),
             buildCategoryList(homePageDatas.categories),
-            Divider(
-              height: 0,
-              thickness: 0.7,
-              color: AppTheme.lightBlackColor,
+            SizedBox(
+              height: 13,
             ),
-            Container(
-              color: Colors.white,
-              margin: EdgeInsets.only(top: 20),
-              padding: EdgeInsets.all(10),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: createNormalText(
-                  'All Products',
-                ),
-              ),
+            Padding(
+              padding: EdgeInsets.only(left: 15),
+              child: createNormalText('Our Products', boldText: true),
+            ),
+            SizedBox(
+              height: 13,
             ),
             buildProducts(
                 homePageDatas.items, MediaQuery.of(context).size.width)
@@ -118,63 +153,30 @@ class Home extends StatelessWidget {
 
 //HEADER
   Widget _buildHeaderSections(BuildContext context, {String cartCount}) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          color: Colors.white,
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5),
-            child: Row(
-              children: <Widget>[
-                IconButton(
-                    icon: Icon(
-                      Icons.menu,
-                      size: AppTheme.iconSizeS,
-                      color: Colors.black,
-                    ),
-                    onPressed: toggleMenu),
-                Expanded(
-                  child: Container(
-                    child: createNormalText(
-                      'Explore',
-                      size: AppTheme.fontSizeL,
-                    ),
-                  ),
-                ),
-                IconButton(
-                  icon: Icon(
-                    Icons.search,
-                    size: AppTheme.iconSizeS,
-                    color: Colors.black,
-                  ),
-                  onPressed: () async {
-                    final String searchResult = await Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => SearchInterface()),
-                    );
-                    if (searchResult != null) {
-                      Navigator.pushNamed(context, Products.myRoute,
-                          arguments: ProductHelper(
-                              operation: ProductHelper.SEARCH,
-                              query: searchResult));
-                    }
-                  },
-                ),
-                buildCartIcon(cartCount: cartCount),
-              ],
-            ),
-          ),
-        ),
-        Divider(
-          height: 0,
-          thickness: 0.7,
-          color: AppTheme.lightBlackColor,
-        ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
         SizedBox(
-          height: 10,
-        )
+          height: 45,
+          width: 60,
+          child: RaisedButton(
+              elevation: 0,
+              padding: EdgeInsets.all(0),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(11),
+                  topRight: Radius.circular(11),
+                ),
+              ),
+              color: AppTheme.secondaryGreenColor,
+              child: Icon(
+                Icons.sort,
+                size: AppTheme.iconSize,
+                color: AppTheme.primaryGreenColor,
+              ),
+              onPressed: toggleMenu),
+        ),
+        buildCartIcon(cartCount: cartCount),
       ],
     );
   }
