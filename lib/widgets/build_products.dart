@@ -243,7 +243,6 @@ Widget _buildProduct(int index, List products, double containerWidth) {
       ],
     ),
   );
-  ;
 }
 
 class DrawTriangle extends CustomPainter {

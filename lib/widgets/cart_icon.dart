@@ -16,21 +16,30 @@ Widget buildCartIcon({String cartCount}) {
       ),
       color: AppTheme.primaryGreenColor,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: cartCount == null
+            ? MainAxisAlignment.center
+            : cartCount == "0"
+                ? MainAxisAlignment.center
+                : MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Icon(
             Icons.redeem,
             size: AppTheme.iconSize,
             color: Colors.white,
           ),
-          createNormalText('3', color: Colors.white)
+          cartCount == null
+              ? Container(
+                  width: 0,
+                  height: 0,
+                )
+              : cartCount == "0"
+                  ? Container(
+                      width: 0,
+                      height: 0,
+                    )
+                  : createNormalText(cartCount, color: Colors.white)
         ],
       ),
     ),
   );
 }
-
-// cartCount == null
-//           ? Container()
-//           : cartCount == "0"
-//               ?

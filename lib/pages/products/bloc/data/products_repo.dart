@@ -17,7 +17,7 @@ class ProductsRepo {
           "price": 10.00,
           "cartQty": 1,
           "imagePath":
-              "https://sambadenglish.com/wp-content/uploads/2017/06/18582577_1310254749028670_4316696463441352313_n-1.jpg"
+              "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/eggs-breakfast-avocado-1296x728-header.jpg?w=1155&h=1528"
         },
         {
           "id": "2",
@@ -27,7 +27,7 @@ class ProductsRepo {
           "price": 5.00,
           "cartQty": 0,
           "imagePath":
-              "https://www.awesomecuisine.com/wp-content/uploads/2007/10/Chicken-Biryani_resized.jpg"
+              "https://cnet4.cbsistatic.com/img/PqmCA2aJUqYBcBtAdMd-R4yu-Eo=/940x0/2020/05/31/5f00f7b1-425b-4cbc-9663-ea84ecf3c94c/gettyimages-962701814.jpg"
         },
         {
           "id": "3",
@@ -37,114 +37,277 @@ class ProductsRepo {
           "price": 8.00,
           "cartQty": 0,
           "imagePath":
-              "https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=750&h=393&url=https%3A%2F%2Fassets.marthastewart.com%2Fstyles%2Fwmax-750%2Fd40%2Fbeef-biryani-bobbi-lin-0041-d113199-0317%2Fbeef-biryani-bobbi-lin-0041-d113199-0317_horiz.jpg%3Fitok%3D2UuMyKHs"
+              "https://try-sunbasket-staging-assets.s3-us-west-2.amazonaws.com/2018/08/sicilian-chicken-broccoli.jpg"
         },
         {
-          "id": "4",
-          "name": "Chow Mein",
+          "id": "2",
+          "name": "Chicken Biriyani",
           "brand": "Shopname",
-          "category": "Vegetable",
-          "price": 12.00,
-          "cartQty": 1,
-          "imagePath":
-              "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F201403-xl-vegetable-chow-mein.jpg%3Fitok%3D4c6b3_pt"
-        },
-        {
-          "id": "5",
-          "name": "Chicken Al Faham",
-          "brand": "Shopname",
-          "category": "Arabian",
-          "price": 11.00,
-          "cartQty": 0,
-          "imagePath": "https://i.ytimg.com/vi/HVi7xxQZDRQ/maxresdefault.jpg"
-        },
-        {
-          "id": "6",
-          "name": "Chicken Mandi",
-          "brand": "Shopname",
-          "category": "Arabian",
-          "price": 11.00,
-          "cartQty": 0,
-          "imagePath": "https://i.ytimg.com/vi/WBXgmNkyMz4/maxresdefault.jpg"
-        },
-        {
-          "id": "7",
-          "name": "Beef Alfaham",
-          "brand": "Shopname",
-          "category": "Arabian",
-          "price": 11.00,
-          "cartQty": 0,
-          "imagePath":
-              "https://b.zmtcdn.com/data/reviews_photos/356/a222e3643f21fdb744e734b008d5f356_1551629842.jpg"
-        },
-        {
-          "id": "8",
-          "name": "Mutton Mandi",
-          "brand": "Shopname",
-          "category": "Arabian",
-          "price": 11.00,
-          "cartQty": 0,
-          "imagePath":
-              "https://media-cdn.tripadvisor.com/media/photo-s/10/a6/83/a3/mutton-cooked-with-flavoured.jpg"
-        },
-        {
-          "id": "9",
-          "name": "Shawarma",
-          "brand": "Shopname",
-          "category": "Arabian",
+          "category": "Biriyani",
           "price": 5.00,
-          "cartQty": 1,
-          "imagePath":
-              "https://c.ndtvimg.com/2020-01/tvr3pq48_shawarma_120x90_21_January_20.jpg"
-        },
-        {
-          "id": "10",
-          "name": "Chatti Pathiri",
-          "brand": "Shopname",
-          "category": "Snacks",
-          "price": 10.00,
-          "cartQty": 1,
-          "imagePath":
-              "https://2.bp.blogspot.com/-iXhGNfH-yug/U7e4YFQ-0vI/AAAAAAAAi2M/zS7WxG726iM/s1600/chatti+pathil+1.jpg"
-        },
-        {
-          "id": "11",
-          "name": "Irachi Pathiri",
-          "brand": "Shopname",
-          "category": "Snacks",
-          "price": 1.00,
-          "cartQty": 1,
-          "imagePath": "https://i.ytimg.com/vi/GwsMOE6ngYo/maxresdefault.jpg"
-        },
-        {
-          "id": "12",
-          "name": "Unnakai",
-          "brand": "Shopname",
-          "category": "Snacks",
-          "price": 1.00,
           "cartQty": 0,
           "imagePath":
-              "https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/2/2016/09/ThalasseryRestaurant.jpg?w=1200&h=628&fill=blur&fit=fill"
+              "https://try-sunbasket-staging-assets.s3-us-west-2.amazonaws.com/2018/08/salmon-green-romesco.jpg"
         },
         {
-          "id": "13",
-          "name": "Avocado Shake",
+          "id": "3",
+          "name": "Beef Biriyani",
           "brand": "Shopname",
-          "category": "Drinks",
-          "price": 15.00,
-          "cartQty": 1,
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
           "imagePath":
-              "https://www.thespruceeats.com/thmb/nFzB2C6IXkqwUk0NiT0LNyLs_OA=/1490x1490/smart/filters:no_upscale()/GettyImages-511024538-5afef110875db9003675c624.jpg"
+              "https://cdn.sunbasket.com/12e70e6d-2cf6-48fd-975d-60a2387d18fd.jpg"
         },
         {
-          "id": "14",
-          "name": "Tender Coconut",
+          "id": "3",
+          "name": "Beef Biriyani",
           "brand": "Shopname",
-          "category": "Drinks",
-          "price": 15.00,
-          "cartQty": 1,
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
           "imagePath":
-              "https://dinetable.com/wp-content/uploads/2016/02/Tender-Coconut-Milkshake4.jpg"
+              "https://cdn.sunbasket.com/57be3bb0-6d9d-4761-af3f-c3399f8c2864.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Chicken Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 5.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://cnet4.cbsistatic.com/img/PqmCA2aJUqYBcBtAdMd-R4yu-Eo=/940x0/2020/05/31/5f00f7b1-425b-4cbc-9663-ea84ecf3c94c/gettyimages-962701814.jpg"
+        },
+        {
+          "id": "3",
+          "name": "Beef Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://try-sunbasket-staging-assets.s3-us-west-2.amazonaws.com/2018/08/sicilian-chicken-broccoli.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Chicken Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 5.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://try-sunbasket-staging-assets.s3-us-west-2.amazonaws.com/2018/08/salmon-green-romesco.jpg"
+        },
+        {
+          "id": "3",
+          "name": "Beef Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://cdn.sunbasket.com/12e70e6d-2cf6-48fd-975d-60a2387d18fd.jpg"
+        },
+        {
+          "id": "3",
+          "name": "Beef Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://cdn.sunbasket.com/57be3bb0-6d9d-4761-af3f-c3399f8c2864.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Chicken Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 5.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://cnet4.cbsistatic.com/img/PqmCA2aJUqYBcBtAdMd-R4yu-Eo=/940x0/2020/05/31/5f00f7b1-425b-4cbc-9663-ea84ecf3c94c/gettyimages-962701814.jpg"
+        },
+        {
+          "id": "3",
+          "name": "Beef Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://try-sunbasket-staging-assets.s3-us-west-2.amazonaws.com/2018/08/sicilian-chicken-broccoli.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Chicken Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 5.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://try-sunbasket-staging-assets.s3-us-west-2.amazonaws.com/2018/08/salmon-green-romesco.jpg"
+        },
+        {
+          "id": "3",
+          "name": "Beef Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://cdn.sunbasket.com/12e70e6d-2cf6-48fd-975d-60a2387d18fd.jpg"
+        },
+        {
+          "id": "3",
+          "name": "Beef Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://cdn.sunbasket.com/57be3bb0-6d9d-4761-af3f-c3399f8c2864.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Chicken Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 5.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://cnet4.cbsistatic.com/img/PqmCA2aJUqYBcBtAdMd-R4yu-Eo=/940x0/2020/05/31/5f00f7b1-425b-4cbc-9663-ea84ecf3c94c/gettyimages-962701814.jpg"
+        },
+        {
+          "id": "3",
+          "name": "Beef Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://try-sunbasket-staging-assets.s3-us-west-2.amazonaws.com/2018/08/sicilian-chicken-broccoli.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Chicken Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 5.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://try-sunbasket-staging-assets.s3-us-west-2.amazonaws.com/2018/08/salmon-green-romesco.jpg"
+        },
+        {
+          "id": "3",
+          "name": "Beef Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://cdn.sunbasket.com/12e70e6d-2cf6-48fd-975d-60a2387d18fd.jpg"
+        },
+        {
+          "id": "3",
+          "name": "Beef Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://cdn.sunbasket.com/57be3bb0-6d9d-4761-af3f-c3399f8c2864.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Chicken Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 5.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://cnet4.cbsistatic.com/img/PqmCA2aJUqYBcBtAdMd-R4yu-Eo=/940x0/2020/05/31/5f00f7b1-425b-4cbc-9663-ea84ecf3c94c/gettyimages-962701814.jpg"
+        },
+        {
+          "id": "3",
+          "name": "Beef Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://try-sunbasket-staging-assets.s3-us-west-2.amazonaws.com/2018/08/sicilian-chicken-broccoli.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Chicken Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 5.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://try-sunbasket-staging-assets.s3-us-west-2.amazonaws.com/2018/08/salmon-green-romesco.jpg"
+        },
+        {
+          "id": "3",
+          "name": "Beef Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://cdn.sunbasket.com/12e70e6d-2cf6-48fd-975d-60a2387d18fd.jpg"
+        },
+        {
+          "id": "3",
+          "name": "Beef Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://cdn.sunbasket.com/57be3bb0-6d9d-4761-af3f-c3399f8c2864.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Chicken Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 5.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://cnet4.cbsistatic.com/img/PqmCA2aJUqYBcBtAdMd-R4yu-Eo=/940x0/2020/05/31/5f00f7b1-425b-4cbc-9663-ea84ecf3c94c/gettyimages-962701814.jpg"
+        },
+        {
+          "id": "3",
+          "name": "Beef Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://try-sunbasket-staging-assets.s3-us-west-2.amazonaws.com/2018/08/sicilian-chicken-broccoli.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Chicken Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 5.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://try-sunbasket-staging-assets.s3-us-west-2.amazonaws.com/2018/08/salmon-green-romesco.jpg"
+        },
+        {
+          "id": "3",
+          "name": "Beef Biriyani",
+          "brand": "Shopname",
+          "category": "Biriyani",
+          "price": 8.00,
+          "cartQty": 0,
+          "imagePath":
+              "https://cdn.sunbasket.com/12e70e6d-2cf6-48fd-975d-60a2387d18fd.jpg"
         },
       ]
     };

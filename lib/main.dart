@@ -1,3 +1,6 @@
+import 'package:bookingapp/pages/category/bloc/category_bloc.dart';
+import 'package:bookingapp/pages/category/bloc/data/category_repo.dart';
+import 'package:bookingapp/pages/category/category.dart';
 import 'package:bookingapp/pages/home/bloc/data/home_repo.dart';
 import 'package:bookingapp/pages/home/bloc/home_bloc.dart';
 import 'package:bookingapp/pages/home/main_home.dart';
@@ -28,6 +31,11 @@ class MyApp extends StatelessWidget {
             return ProductsBloc(ProductsRepo());
           },
         ),
+        BlocProvider(
+          create: (BuildContext context) {
+            return CategoryBloc(CategoryRepo());
+          },
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -36,6 +44,7 @@ class MyApp extends StatelessWidget {
           SplashScreen.myRoute: (BuildContext context) => SplashScreen(),
           MainHome.myRoute: (BuildContext context) => MainHome(),
           Products.myRoute: (BuildContext context) => Products(),
+          Category.myRoute: (BuildContext context) => Category(),
         },
       ),
     );

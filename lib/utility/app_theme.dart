@@ -21,17 +21,15 @@ class AppTheme {
   static final Color secondaryGreenColor = HexColor('#E1F8D6');
 
   static final Color secondaryBlackColor = HexColor("#858585");
+
   static final Color greyPrimaryColor = HexColor("#F0F0F0");
 
-////OLD DELETE EMM ALL
-
   static final Color primaryBlueColor = HexColor('#14163C');
-
   static final Color secondaryBlueColor = HexColor('#A092F0');
 
-  static final Color yellowColor = Colors.yellow[800];
-
-  static final Color greyBackgroundColor = Colors.grey[100];
-
-  static final Color lightBlackColor = HexColor("#545454");
+  static final Color categoryColorGreen = HexColor("#C7D8A4");
+  static final Color categoryColorOrange = HexColor("#F8BA8B");
+  static final Color categoryColorCreme = HexColor("#F5E0BA");
+  static final Color categoryColorPink = HexColor("#F1AEAF");
+  static final Color categoryColorYellow = HexColor("#F5E17A");
 }

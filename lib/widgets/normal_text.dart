@@ -6,7 +6,8 @@ Widget createNormalText(String string,
     bool boldText = false,
     double size,
     bool truncate = false,
-    bool alignRight = false}) {
+    bool alignRight = false,
+    int maxLine = 1}) {
   size = size == null ? AppTheme.fontSizeM : size;
   if (color == null) {
     color = Colors.black;
@@ -25,5 +26,6 @@ Widget createNormalText(String string,
         color: color,
         fontSize: size,
         fontWeight: boldText ? FontWeight.bold : FontWeight.normal),
+    maxLines: maxLine,
   );
 }

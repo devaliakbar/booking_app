@@ -1,3 +1,4 @@
+import 'package:bookingapp/pages/category/category.dart';
 import 'package:bookingapp/pages/home/bloc/data/home_model.dart';
 import 'package:bookingapp/pages/home/bloc/home_bloc.dart';
 import 'package:bookingapp/pages/home/widgets/build_category.dart';
@@ -8,6 +9,7 @@ import 'package:bookingapp/pages/products/products.dart';
 import 'package:bookingapp/utility/app_theme.dart';
 import 'package:bookingapp/widgets/build_products.dart';
 import 'package:bookingapp/widgets/cart_icon.dart';
+import 'package:bookingapp/widgets/error_info.dart';
 import 'package:bookingapp/widgets/normal_text.dart';
 import 'package:bookingapp/widgets/search_field.dart';
 import 'package:bookingapp/widgets/search_interface/search_interface.dart';
@@ -43,18 +45,13 @@ class Home extends StatelessWidget {
   }
 
 //ERROR WIDGET
-  Widget _buildError(String text, BuildContext context) {
+  Widget _buildError(String errorMsg, BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         _buildHeaderSections(context),
         Expanded(
-          child: Center(
-            child: Text(
-              text,
-              style: TextStyle(color: Colors.red),
-            ),
-          ),
+          child: buildErrorMsg(errorMsg),
         ),
       ],
     );
@@ -105,7 +102,7 @@ class Home extends StatelessWidget {
             ),
             buildSlider(homePageDatas.bannersPath),
             SizedBox(
-              height: 13,
+              height: 5,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 15),
@@ -113,14 +110,18 @@ class Home extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   createNormalText('Categories', boldText: true),
-                  createNormalText('View All',
-                      color: AppTheme.secondaryBlackColor,
-                      size: AppTheme.fontSizeXS)
+                  FlatButton(
+                    onPressed: () =>
+                        Navigator.pushNamed(context, Category.myRoute),
+                    child: createNormalText('View All',
+                        color: AppTheme.secondaryBlackColor,
+                        size: AppTheme.fontSizeXS),
+                  )
                 ],
               ),
             ),
             SizedBox(
-              height: 13,
+              height: 5,
             ),
             buildCategoryList(homePageDatas.categories),
             SizedBox(

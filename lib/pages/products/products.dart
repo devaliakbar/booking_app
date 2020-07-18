@@ -72,7 +72,7 @@ class _ProductsState extends State<Products> {
       children: <Widget>[
         _buildHeaderSections(cartCount: productsDatas.cartCount.toString()),
         SizedBox(
-          height: 5,
+          height: 15,
         ),
         Expanded(
             child: ListView(
@@ -90,7 +90,7 @@ class _ProductsState extends State<Products> {
       children: <Widget>[
         _buildHeaderSections(),
         SizedBox(
-          height: 5,
+          height: 15,
         ),
         Expanded(child: showProductsLoadingShimmer()),
       ],
@@ -98,48 +98,81 @@ class _ProductsState extends State<Products> {
   }
 
   Widget _buildHeaderSections({String cartCount}) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 5),
-      child: Row(
-        children: <Widget>[
-          IconButton(
-              icon: Icon(
+    return Row(
+      children: <Widget>[
+        SizedBox(
+          height: 45,
+          width: 60,
+          child: RaisedButton(
+              elevation: 0,
+              padding: EdgeInsets.all(0),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(11),
+                  topRight: Radius.circular(11),
+                ),
+              ),
+              color: AppTheme.secondaryGreenColor,
+              child: Icon(
                 Icons.arrow_back_ios,
-                size: AppTheme.iconSizeS,
-                color: AppTheme.primaryBlueColor,
+                size: AppTheme.iconSize,
+                color: AppTheme.primaryGreenColor,
               ),
               onPressed: () {
                 Navigator.pop(context);
               }),
-          Expanded(
-            child: Container(
-              child: createNormalText(passedDetails.query,
-                  truncate: true, size: AppTheme.fontSizeL),
+        ),
+        SizedBox(
+          width: 10,
+        ),
+        Expanded(
+          child: Container(
+            child: createNormalText(
+              passedDetails.query,
+              truncate: true,
             ),
           ),
-          IconButton(
-              icon: Icon(
-                Icons.search,
-                size: AppTheme.iconSizeS,
-                color: AppTheme.primaryBlueColor,
+        ),
+        SizedBox(
+          width: 5,
+        ),
+        SizedBox(
+          height: 45,
+          width: 68,
+          child: RaisedButton(
+              elevation: 0,
+              padding: EdgeInsets.all(0),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(11),
               ),
-              onPressed: () async {
-                final String searchResult = await Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SearchInterface()),
-                );
-
-                if (searchResult != null) {
-                  passedDetails = new ProductHelper(
-                      operation: ProductHelper.SEARCH, query: searchResult);
-                  if (mounted) {
-                    setState(() {});
-                  }
-                }
-              }),
-          buildCartIcon(cartCount: cartCount),
-        ],
-      ),
+              color: AppTheme.primaryGreenColor,
+              child: Icon(
+                Icons.search,
+                size: AppTheme.iconSize,
+                color: Colors.white,
+              ),
+              onPressed: _search),
+        ),
+        SizedBox(
+          width: 5,
+        ),
+        buildCartIcon(cartCount: cartCount),
+      ],
     );
+  }
+
+  _search() async {
+    final String searchResult = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => SearchInterface()),
+    );
+
+    if (searchResult != null) {
+      passedDetails = new ProductHelper(
+          operation: ProductHelper.SEARCH, query: searchResult);
+      if (mounted) {
+        setState(() {});
+      }
+    }
   }
 }
