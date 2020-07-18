@@ -3,7 +3,7 @@ import 'package:bookingapp/pages/home/bloc/data/home_model.dart';
 class HomeRepo {
   Future<HomePageDatas> getHomePageDatas() async {
 //FETCH FROM SERVER
-    await Future.delayed(Duration(milliseconds: 1));
+    await Future.delayed(Duration(milliseconds: 1500));
 
     var jsonDecoded = {
       "bannersPath": [

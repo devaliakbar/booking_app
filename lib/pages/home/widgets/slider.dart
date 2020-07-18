@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 Widget buildSlider(List bannerPaths) {
   return Container(
-    margin: EdgeInsets.symmetric(horizontal: 7),
+    margin: EdgeInsets.symmetric(horizontal: 15),
     child: CarouselSlider(
       options: CarouselOptions(
         height: 140.0,

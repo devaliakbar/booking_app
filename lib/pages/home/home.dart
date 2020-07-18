@@ -71,35 +71,7 @@ class Home extends StatelessWidget {
         Expanded(
             child: ListView(
           children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(left: 15),
-              child: createNormalText('Good Morning!', boldText: true),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 15, top: 3, bottom: 10),
-              child: createNormalText(
-                  'Let\'s order some food and have a delicious day',
-                  color: AppTheme.secondaryBlackColor,
-                  size: AppTheme.fontSizeXS),
-            ),
-            InkWell(
-              onTap: () async {
-                final String searchResult = await Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SearchInterface()),
-                );
-                if (searchResult != null) {
-                  Navigator.pushNamed(context, Products.myRoute,
-                      arguments: ProductHelper(
-                          operation: ProductHelper.SEARCH,
-                          query: searchResult));
-                }
-              },
-              child: buildSearchField(),
-            ),
-            SizedBox(
-              height: 13,
-            ),
+            _buildSearchBarDiv(context),
             buildSlider(homePageDatas.bannersPath),
             SizedBox(
               height: 5,
@@ -147,6 +119,10 @@ class Home extends StatelessWidget {
     return Column(
       children: <Widget>[
         _buildHeaderSections(context),
+        SizedBox(
+          height: 10,
+        ),
+        _buildSearchBarDiv(context),
         Expanded(child: showHomeLoadingShimmer()),
       ],
     );
@@ -178,6 +154,43 @@ class Home extends StatelessWidget {
               onPressed: toggleMenu),
         ),
         buildCartIcon(cartCount: cartCount),
+      ],
+    );
+  }
+
+  Widget _buildSearchBarDiv(context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Padding(
+          padding: EdgeInsets.only(left: 15),
+          child: createNormalText('Good Morning!', boldText: true),
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: 15, top: 3, bottom: 10),
+          child: createNormalText(
+              'Let\'s order some food and have a delicious day',
+              color: AppTheme.secondaryBlackColor,
+              size: AppTheme.fontSizeXS),
+        ),
+        InkWell(
+          onTap: () async {
+            final String searchResult = await Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SearchInterface()),
+            );
+            if (searchResult != null) {
+              Navigator.pushNamed(context, Products.myRoute,
+                  arguments: ProductHelper(
+                      operation: ProductHelper.SEARCH, query: searchResult));
+            }
+          },
+          child: buildSearchField(),
+        ),
+        SizedBox(
+          height: 13,
+        ),
       ],
     );
   }

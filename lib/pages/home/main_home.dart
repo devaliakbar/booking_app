@@ -49,7 +49,8 @@ class _MainHomeState extends State<MainHome>
   @override
   Widget build(BuildContext context) {
     setUpStatusbarColor(
-        backgroundColor: isCollapsed ? Colors.white : AppTheme.primaryBlueColor,
+        backgroundColor:
+            isCollapsed ? Colors.white : AppTheme.primaryGreenColor,
         whiteColor: !isCollapsed);
 
     Size size = MediaQuery.of(context).size;
@@ -78,7 +79,7 @@ class _MainHomeState extends State<MainHome>
         scale: menuScaleAnimation,
         child: Container(
           margin: EdgeInsets.only(left: 15),
-          color: AppTheme.primaryBlueColor,
+          color: AppTheme.primaryGreenColor,
           child: Align(
             alignment: Alignment.centerLeft,
             child: Column(
@@ -96,7 +97,7 @@ class _MainHomeState extends State<MainHome>
                   children: <Widget>[
                     Icon(
                       Icons.library_books,
-                      color: AppTheme.secondaryBlueColor,
+                      color: AppTheme.secondaryGreenColor,
                     ),
                     SizedBox(
                       width: 15,
@@ -114,7 +115,7 @@ class _MainHomeState extends State<MainHome>
                   children: <Widget>[
                     Icon(
                       Icons.shopping_cart,
-                      color: AppTheme.secondaryBlueColor,
+                      color: AppTheme.secondaryGreenColor,
                     ),
                     SizedBox(
                       width: 15,
@@ -132,7 +133,7 @@ class _MainHomeState extends State<MainHome>
                   children: <Widget>[
                     Icon(
                       Icons.settings,
-                      color: AppTheme.secondaryBlueColor,
+                      color: AppTheme.secondaryGreenColor,
                     ),
                     SizedBox(
                       width: 15,
@@ -150,7 +151,7 @@ class _MainHomeState extends State<MainHome>
                   children: <Widget>[
                     Icon(
                       Icons.exit_to_app,
-                      color: AppTheme.secondaryBlueColor,
+                      color: AppTheme.secondaryGreenColor,
                     ),
                     SizedBox(
                       width: 15,
@@ -218,7 +219,7 @@ class _MainHomeState extends State<MainHome>
     if (mounted) {
       setState(() {
         if (isCollapsed) {
-          backgroundColor = AppTheme.primaryBlueColor;
+          backgroundColor = AppTheme.primaryGreenColor;
           _controller.forward();
         } else
           _controller.reverse().then((e) {

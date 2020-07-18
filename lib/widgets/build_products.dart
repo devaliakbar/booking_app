@@ -157,7 +157,6 @@ Widget _buildProduct(int index, List products, double containerWidth) {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: AppTheme.fontSizeXS,
-                      color: AppTheme.primaryBlueColor,
                     ),
                     decoration: InputDecoration(
                       filled: true,

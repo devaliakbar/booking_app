@@ -24,9 +24,6 @@ class AppTheme {
 
   static final Color greyPrimaryColor = HexColor("#F0F0F0");
 
-  static final Color primaryBlueColor = HexColor('#14163C');
-  static final Color secondaryBlueColor = HexColor('#A092F0');
-
   static final Color categoryColorGreen = HexColor("#C7D8A4");
   static final Color categoryColorOrange = HexColor("#F8BA8B");
   static final Color categoryColorCreme = HexColor("#F5E0BA");

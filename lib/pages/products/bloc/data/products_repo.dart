@@ -4,7 +4,7 @@ import 'package:bookingapp/pages/products/product_helper.dart';
 class ProductsRepo {
   Future<ProductsDatas> getProducts(ProductHelper productHelper) async {
     //FETCH FROM SERVER
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(milliseconds: 1500));
 
     var jsonDecoded = {
       "cartCount": 3,

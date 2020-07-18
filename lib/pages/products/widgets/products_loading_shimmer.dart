@@ -10,7 +10,7 @@ Widget showProductsLoadingShimmer() {
 
 Widget _buildShimmingList(context) {
   return Container(
-    height: 322,
+    height: 323,
     margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
     child: Row(
       children: <Widget>[
