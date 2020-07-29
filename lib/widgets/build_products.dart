@@ -16,19 +16,25 @@ Widget buildProducts(List products, double screenWidth) {
     noOfRows = ((productLenth + 1) / 2).round();
   }
 
+  double singleContainerWidth = (screenWidth / 2) - 15;
+
+  double totalProductDivHeight = (146 + singleContainerWidth) * noOfRows;
+
+  double sigleContainerHeight = 131 + singleContainerWidth;
+
   return Container(
     color: Colors.white,
     child: Container(
       margin: EdgeInsets.only(left: 15),
-      height: (338.0 * noOfRows),
+      height: totalProductDivHeight,
       child: GridView.count(
-        childAspectRatio: ((screenWidth / 2) - 15) / 323,
+        childAspectRatio: singleContainerWidth / sigleContainerHeight,
         physics: NeverScrollableScrollPhysics(),
         crossAxisCount: 2,
         children: List.generate(
           productLenth,
           (index) {
-            return _buildProduct(index, products, (screenWidth / 2) - 15);
+            return _buildProduct(index, products, singleContainerWidth);
           },
         ),
       ),
@@ -100,7 +106,8 @@ Widget _buildProduct(int index, List products, double containerWidth) {
           child: Align(
             alignment: Alignment.centerLeft,
             child: createNormalText(
-                products[index].name + ' / ' + products[index].brand,
+                products[index].name //+ ' / ' + products[index].brand
+                ,
                 truncate: true,
                 size: AppTheme.fontSizeXS),
           ),

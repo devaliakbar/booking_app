@@ -1,7 +1,6 @@
 import 'package:bookingapp/pages/category/bloc/category_bloc.dart';
 import 'package:bookingapp/pages/category/bloc/data/category_model.dart';
 import 'package:bookingapp/pages/category/widgets/category_loading_shimmer.dart';
-import 'package:bookingapp/pages/home/widgets/home_loading_shimmer.dart';
 import 'package:bookingapp/pages/products/product_helper.dart';
 import 'package:bookingapp/pages/products/products.dart';
 import 'package:bookingapp/utility/app_theme.dart';
