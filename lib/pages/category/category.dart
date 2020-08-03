@@ -93,7 +93,7 @@ class Category extends StatelessWidget {
         SizedBox(
           width: 10,
         ),
-        buildCartIcon(cartCount: cartCount),
+        buildCartIcon(context, cartCount: cartCount),
       ],
     );
   }

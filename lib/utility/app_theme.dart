@@ -8,6 +8,7 @@ class AppTheme {
 
   static const double iconSizeS = 17.0;
   static const double iconSize = 23.0;
+  static const double iconSizeX = 27.0;
 
   static double fontSizeXXXS = screenHeight > mediumScreenSize ? 11.5 : 9.0;
   static double fontSizeXXS = screenHeight > mediumScreenSize ? 13.5 : 11.0;

@@ -77,7 +77,7 @@ Widget showProductDetailLoadingShimmer(BuildContext context) {
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(5),
           ),
           margin: EdgeInsets.only(left: 15, right: 15, bottom: 15),
           height: 40.0,
@@ -89,7 +89,7 @@ Widget showProductDetailLoadingShimmer(BuildContext context) {
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(5),
           ),
           margin: EdgeInsets.only(left: 15, right: 15, bottom: 15),
           height: 40.0,
@@ -101,7 +101,7 @@ Widget showProductDetailLoadingShimmer(BuildContext context) {
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(5),
           ),
           margin: EdgeInsets.only(left: 15, right: 15, bottom: 15),
           height: 40.0,

@@ -156,7 +156,7 @@ class _ProductsState extends State<Products> {
         SizedBox(
           width: 5,
         ),
-        buildCartIcon(cartCount: cartCount),
+        buildCartIcon(context, cartCount: cartCount),
       ],
     );
   }

@@ -77,94 +77,109 @@ class _MainHomeState extends State<MainHome>
       position: slideAnimation,
       child: ScaleTransition(
         scale: menuScaleAnimation,
-        child: Container(
-          margin: EdgeInsets.only(left: 15),
-          color: AppTheme.primaryGreenColor,
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: createNormalText('MENU',
-                      color: Colors.white, size: AppTheme.fontSizeXL),
+        child: Stack(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(top: 10, left: 20),
+              child: IconButton(
+                icon: Icon(
+                  Icons.close,
+                  size: AppTheme.iconSizeX,
+                  color: Colors.white,
                 ),
-                SizedBox(
-                  height: 70,
-                ),
-                Row(
-                  children: <Widget>[
-                    Icon(
-                      Icons.library_books,
-                      color: AppTheme.secondaryGreenColor,
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    createNormalText(
-                      'My Orders',
-                      color: Colors.white,
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                Row(
-                  children: <Widget>[
-                    Icon(
-                      Icons.shopping_cart,
-                      color: AppTheme.secondaryGreenColor,
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    createNormalText(
-                      'My Cart',
-                      color: Colors.white,
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                Row(
-                  children: <Widget>[
-                    Icon(
-                      Icons.settings,
-                      color: AppTheme.secondaryGreenColor,
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    createNormalText(
-                      'Settings',
-                      color: Colors.white,
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 70,
-                ),
-                Row(
-                  children: <Widget>[
-                    Icon(
-                      Icons.exit_to_app,
-                      color: AppTheme.secondaryGreenColor,
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    createNormalText(
-                      'Log Out',
-                      color: Colors.white,
-                    )
-                  ],
-                )
-              ],
+                onPressed: () => drawerToggleFunction(),
+              ),
             ),
-          ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Container(
+                margin: EdgeInsets.only(left: 30),
+                color: AppTheme.primaryGreenColor,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: createNormalText('MENU',
+                          color: Colors.white, size: AppTheme.fontSizeXL),
+                    ),
+                    SizedBox(
+                      height: 70,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.library_books,
+                          color: AppTheme.secondaryGreenColor,
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        createNormalText(
+                          'My Orders',
+                          color: Colors.white,
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.shopping_cart,
+                          color: AppTheme.secondaryGreenColor,
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        createNormalText(
+                          'My Cart',
+                          color: Colors.white,
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.settings,
+                          color: AppTheme.secondaryGreenColor,
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        createNormalText(
+                          'Settings',
+                          color: Colors.white,
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 70,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.exit_to_app,
+                          color: AppTheme.secondaryGreenColor,
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        createNormalText(
+                          'Log Out',
+                          color: Colors.white,
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );
@@ -183,19 +198,22 @@ class _MainHomeState extends State<MainHome>
           animationDuration: duration,
           borderRadius: BorderRadius.all(Radius.circular(40)),
           elevation: isCollapsed ? 0 : 8,
-          child: Container(
-            decoration: new BoxDecoration(
-              color: Colors.white,
-              borderRadius: new BorderRadius.only(
-                topLeft: Radius.circular(isCollapsed ? 0.0 : 25.0),
-                bottomLeft: Radius.circular(isCollapsed ? 0.0 : 25.0),
+          child: IgnorePointer(
+            ignoring: !isCollapsed,
+            child: Container(
+              decoration: new BoxDecoration(
+                color: Colors.white,
+                borderRadius: new BorderRadius.only(
+                  topLeft: Radius.circular(isCollapsed ? 0.0 : 25.0),
+                  bottomLeft: Radius.circular(isCollapsed ? 0.0 : 25.0),
+                ),
               ),
+              padding: EdgeInsets.only(
+                  top: isCollapsed ? 0.0 : 15,
+                  bottom: isCollapsed ? 0.0 : 15,
+                  left: isCollapsed ? 0.0 : 15),
+              child: Home(drawerToggleFunction),
             ),
-            padding: EdgeInsets.only(
-                top: isCollapsed ? 0.0 : 15,
-                bottom: isCollapsed ? 0.0 : 15,
-                left: isCollapsed ? 0.0 : 15),
-            child: Home(drawerToggleFunction),
           ),
         ),
       ),

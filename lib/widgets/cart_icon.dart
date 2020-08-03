@@ -1,14 +1,17 @@
+import 'package:bookingapp/pages/cart/cart.dart';
 import 'package:bookingapp/utility/app_theme.dart';
 import 'package:bookingapp/widgets/normal_text.dart';
 import 'package:flutter/material.dart';
 
-Widget buildCartIcon({String cartCount}) {
+Widget buildCartIcon(BuildContext context, {String cartCount}) {
   return Container(
     margin: EdgeInsets.only(right: 15),
     height: 45,
     width: 68,
     child: RaisedButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.pushNamed(context, Cart.myRoute);
+      },
       elevation: 0,
       padding: EdgeInsets.all(0),
       shape: RoundedRectangleBorder(

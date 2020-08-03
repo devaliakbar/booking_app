@@ -316,7 +316,7 @@ class ProductDetail extends StatelessWidget {
         SizedBox(
           width: 5,
         ),
-        buildCartIcon(cartCount: cartCount),
+        buildCartIcon(context, cartCount: cartCount),
       ],
     );
   }

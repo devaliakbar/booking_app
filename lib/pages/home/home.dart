@@ -153,7 +153,7 @@ class Home extends StatelessWidget {
               ),
               onPressed: toggleMenu),
         ),
-        buildCartIcon(cartCount: cartCount),
+        buildCartIcon(context, cartCount: cartCount),
       ],
     );
   }

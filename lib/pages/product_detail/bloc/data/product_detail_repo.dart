@@ -16,9 +16,11 @@ class ProductDetailRepo {
       "quantity": 5,
       "price": 10.00,
       "imagesUrl": [
-        "https://res.cloudinary.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/ubxnsn4wcvscqmfjawjw",
-        "https://content3.jdmagicbox.com/comp/gurgaon/v1/011pxx11.xx11.181113173312.z1v1/catalogue/pizza-galleria-gurgaon-sector-7-gurgaon-pizza-outlets-19axaatln9.jpg",
-        "https://res.cloudinary.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/k9uokyf2hqlvqs9usjxi"
+        "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/eggs-breakfast-avocado-1296x728-header.jpg?w=1155&h=1528",
+        "https://cnet4.cbsistatic.com/img/PqmCA2aJUqYBcBtAdMd-R4yu-Eo=/940x0/2020/05/31/5f00f7b1-425b-4cbc-9663-ea84ecf3c94c/gettyimages-962701814.jpg",
+        "https://try-sunbasket-staging-assets.s3-us-west-2.amazonaws.com/2018/08/sicilian-chicken-broccoli.jpg",
+        "https://try-sunbasket-staging-assets.s3-us-west-2.amazonaws.com/2018/08/salmon-green-romesco.jpg",
+        "https://cdn.sunbasket.com/12e70e6d-2cf6-48fd-975d-60a2387d18fd.jpg"
       ]
     };
 
