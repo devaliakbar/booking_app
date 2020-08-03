@@ -34,7 +34,7 @@ class _ProductsState extends State<Products> {
         child: BlocConsumer(
           bloc: BlocProvider.of<ProductsBloc>(context),
           listener: (context, state) {
-            print("Home State Changed");
+            print("Product State Changed");
           },
           builder: (context, state) {
             if (state is ProductsLoadingFailedState) {
@@ -78,7 +78,7 @@ class _ProductsState extends State<Products> {
             child: ListView(
           children: <Widget>[
             buildProducts(
-                productsDatas.items, MediaQuery.of(context).size.width)
+                context, productsDatas.items, MediaQuery.of(context).size.width)
           ],
         ))
       ],

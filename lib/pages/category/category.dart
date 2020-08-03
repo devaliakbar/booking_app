@@ -24,7 +24,7 @@ class Category extends StatelessWidget {
         child: BlocConsumer(
           bloc: BlocProvider.of<CategoryBloc>(context),
           listener: (context, state) {
-            print("Home State Changed");
+            print("Category State Changed");
           },
           builder: (context, state) {
             if (state is CategoryLoadingFailedState) {

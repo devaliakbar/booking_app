@@ -192,7 +192,9 @@ class _MainHomeState extends State<MainHome>
               ),
             ),
             padding: EdgeInsets.only(
-                top: isCollapsed ? 0.0 : 15, bottom: isCollapsed ? 0.0 : 15),
+                top: isCollapsed ? 0.0 : 15,
+                bottom: isCollapsed ? 0.0 : 15,
+                left: isCollapsed ? 0.0 : 15),
             child: Home(drawerToggleFunction),
           ),
         ),

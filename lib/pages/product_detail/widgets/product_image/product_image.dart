@@ -1,25 +1,24 @@
+import 'package:bookingapp/pages/product_detail/widgets/product_image/package/carousel_widget.dart';
+import 'package:bookingapp/utility/app_theme.dart';
 import 'package:bookingapp/widgets/loading_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-Widget buildSlider(List bannerPaths) {
-  return Container(
-    margin: EdgeInsets.symmetric(horizontal: 15),
-    child: CarouselSlider(
-      options: CarouselOptions(
-        enlargeCenterPage: true,
-        height: 140.0,
-        enableInfiniteScroll: true,
-        autoPlayAnimationDuration: Duration(milliseconds: 800),
-        autoPlay: true,
-        autoPlayCurve: Curves.fastOutSlowIn,
-      ),
-      items: bannerPaths.map((i) {
-        return Builder(
-          builder: (BuildContext context) {
-            return Container(
-              width: MediaQuery.of(context).size.width,
+class ProductImage extends StatelessWidget {
+  final List<String> imageUrls;
+  ProductImage(this.imageUrls);
+
+  @override
+  Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    return Container(
+      width: screenWidth - 30,
+      margin: EdgeInsets.symmetric(horizontal: 15),
+      height: (screenWidth) * 0.75,
+      child: Carousel(
+        listViews: imageUrls.map(
+          (i) {
+            return Fragment(
               child: CachedNetworkImage(
                 imageBuilder: (context, imageProvider) => Container(
                   decoration: BoxDecoration(
@@ -33,14 +32,14 @@ Widget buildSlider(List bannerPaths) {
                 imageUrl: i,
                 placeholder: (context, url) => showLoading(),
                 errorWidget: (context, url, error) => Icon(
-                  Icons.person,
-                  color: Colors.black,
+                  Icons.broken_image,
+                  color: AppTheme.secondaryGreenColor,
                 ),
               ),
             );
           },
-        );
-      }).toList(),
-    ),
-  );
+        ).toList(),
+      ),
+    );
+  }
 }

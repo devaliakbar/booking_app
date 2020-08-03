@@ -16,6 +16,8 @@ Widget createNormalText(String string,
   TextOverflow overflowStyle = TextOverflow.visible;
   if (truncate) {
     overflowStyle = TextOverflow.ellipsis;
+  } else {
+    maxLine = 100;
   }
 
   return Text(

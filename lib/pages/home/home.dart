@@ -107,7 +107,7 @@ class Home extends StatelessWidget {
               height: 13,
             ),
             buildProducts(
-                homePageDatas.items, MediaQuery.of(context).size.width)
+                context, homePageDatas.items, MediaQuery.of(context).size.width)
           ],
         ))
       ],
