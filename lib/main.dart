@@ -1,3 +1,5 @@
+import 'package:bookingapp/pages/cart/bloc/cart_bloc.dart';
+import 'package:bookingapp/pages/cart/bloc/data/cart_repo.dart';
 import 'package:bookingapp/pages/cart/cart.dart';
 import 'package:bookingapp/pages/category/bloc/category_bloc.dart';
 import 'package:bookingapp/pages/category/bloc/data/category_repo.dart';
@@ -43,6 +45,11 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (BuildContext context) {
             return ProductDetailBloc(ProductDetailRepo());
+          },
+        ),
+        BlocProvider(
+          create: (BuildContext context) {
+            return CartBloc(CartRepo());
           },
         ),
       ],
