@@ -72,7 +72,7 @@ class ProductDetail extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 child: createNormalText(productDetailDatas.productName,
-                    boldText: true),
+                    size: AppTheme.fontSizeS, boldText: true),
               ),
               SizedBox(
                 height: 5,
@@ -221,6 +221,7 @@ class ProductDetail extends StatelessWidget {
                                 convertToCurrency(
                                   productDetailDatas.price.toString(),
                                 ),
+                                size: AppTheme.fontSizeS,
                                 boldText: true),
                           ],
                         )),
