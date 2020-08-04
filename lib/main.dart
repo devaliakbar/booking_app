@@ -24,6 +24,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  static const GOOGLE_API_KEY = 'AIzaSyDyp8MKMmVcSWWB7d3GscUwKXcIaaf0RW4';
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(

@@ -1,10 +1,14 @@
+import 'package:bookingapp/main.dart';
+import 'package:bookingapp/pages/address/widgets/location_pick_map.dart';
 import 'package:bookingapp/utility/app_theme.dart';
 import 'package:bookingapp/utility/validator.dart';
 import 'package:bookingapp/widgets/build_button.dart';
 import 'package:bookingapp/widgets/normal_text.dart';
 import 'package:bookingapp/widgets/text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
+import 'package:google_maps_webservice/places.dart';
+import 'package:flutter_google_places/flutter_google_places.dart';
+import 'package:location/location.dart' as LocationTracker;
 
 class Address extends StatefulWidget {
   static const String myRoute = '/address';
@@ -17,7 +21,6 @@ class _AddressState extends State<Address> {
   @override
   void initState() {
     super.initState();
-    _getCurrentLocation();
   }
 
   @override
@@ -46,13 +49,16 @@ class _AddressState extends State<Address> {
                 children: <Widget>[
                   Stack(
                     children: <Widget>[
-                      buildTextField(
-                          label: "Location*",
-                          cFocusNode: _locationFocusNode,
-                          cController: _locationController,
-                          cValidator: onValidateLocation,
-                          maxlength: 150,
-                          enabled: false),
+                      InkWell(
+                        onTap: () => _showLocationAutoComplete(),
+                        child: buildTextField(
+                            label: "Location*",
+                            cFocusNode: _locationFocusNode,
+                            cController: _locationController,
+                            cValidator: onValidateLocation,
+                            maxlength: 150,
+                            enabled: false),
+                      ),
                       Positioned(
                         right: 10,
                         top: 11,
@@ -230,25 +236,69 @@ class _AddressState extends State<Address> {
     return null;
   }
 
-  Map<String, double> _locationData = new Map();
-  _getCurrentLocation() async {
-    Position locationData = await Geolocator()
-        .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+  _showLocationAutoComplete() async {
+    Prediction prediction = await PlacesAutocomplete.show(
+      context: context,
+      apiKey: MyApp.GOOGLE_API_KEY,
+      onError: (PlacesAutocompleteResponse response) {
+        print("Location Autocomplete Error : " + response.errorMessage);
+      },
+      mode: Mode.overlay,
+      language: "en",
+      components: [Component(Component.country, "in")],
+    );
 
-    _locationData['latitude'] = locationData.latitude;
-    _locationData['longitude'] = locationData.longitude;
-    _setLocationName();
+    if (prediction != null) {
+      GoogleMapsPlaces _places = GoogleMapsPlaces(apiKey: MyApp.GOOGLE_API_KEY);
+      PlacesDetailsResponse detail =
+          await _places.getDetailsByPlaceId(prediction.placeId);
+
+      _setLocation(detail.result.geometry.location.lat,
+          detail.result.geometry.location.lng);
+    }
   }
 
-  _setLocationName() async {
-    List<Placemark> placemark = await Geolocator().placemarkFromCoordinates(
-        _locationData['latitude'], _locationData['longitude']);
+  _getCurrentLocation() async {
+    LocationTracker.Location location = new LocationTracker.Location();
 
-    _locationController.text = placemark[0].name +
-        ", " +
-        placemark[0].subAdministrativeArea +
-        ", " +
-        placemark[0].administrativeArea;
+    bool _serviceEnabled;
+    LocationTracker.PermissionStatus _permissionGranted;
+
+    _serviceEnabled = await location.serviceEnabled();
+    if (!_serviceEnabled) {
+      _serviceEnabled = await location.requestService();
+      if (!_serviceEnabled) {
+        return;
+      }
+    }
+
+    _permissionGranted = await location.hasPermission();
+    if (_permissionGranted == LocationTracker.PermissionStatus.denied) {
+      _permissionGranted = await location.requestPermission();
+      if (_permissionGranted != LocationTracker.PermissionStatus.granted) {
+        return;
+      }
+    }
+
+    LocationTracker.LocationData _locationDetail = await location.getLocation();
+    _setLocation(_locationDetail.latitude, _locationDetail.longitude);
+  }
+
+  Map<String, double> _locationData = new Map();
+
+  _setLocation(double lat, double lon) async {
+    _locationData = await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => LocationPickMap(lat, lon),
+      ),
+    );
+
+    if (_locationData == null) {
+      return;
+    }
+
+    _locationController.text = _locationData['latitude'].toString();
   }
 
   submit() {
