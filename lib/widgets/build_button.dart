@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 Widget buildButton(
     {@required String label,
-    @required Function onPrressed,
+    @required Function onPressed,
     @required double width}) {
   return SizedBox(
     width: width,
@@ -14,7 +14,7 @@ Widget buildButton(
         borderRadius: BorderRadius.circular(10.0),
       ),
       color: AppTheme.primaryGreenColor,
-      onPressed: onPrressed,
+      onPressed: onPressed,
       child: createNormalText(label, color: Colors.white),
     ),
   );

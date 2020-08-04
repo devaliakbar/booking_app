@@ -1,3 +1,4 @@
+import 'package:bookingapp/pages/address/address.dart';
 import 'package:bookingapp/pages/cart/bloc/cart_bloc.dart';
 import 'package:bookingapp/pages/cart/bloc/data/cart_repo.dart';
 import 'package:bookingapp/pages/cart/cart.dart';
@@ -63,6 +64,7 @@ class MyApp extends StatelessWidget {
           Category.myRoute: (BuildContext context) => Category(),
           ProductDetail.myRoute: (BuildContext context) => ProductDetail(),
           Cart.myRoute: (BuildContext context) => Cart(),
+          Address.myRoute: (BuildContext context) => Address(),
         },
       ),
     );

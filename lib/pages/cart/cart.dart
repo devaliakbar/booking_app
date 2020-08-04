@@ -1,3 +1,4 @@
+import 'package:bookingapp/pages/address/address.dart';
 import 'package:bookingapp/pages/cart/bloc/cart_bloc.dart';
 import 'package:bookingapp/pages/cart/bloc/data/cart_model.dart';
 import 'package:bookingapp/pages/cart/widgets/cart_items.dart';
@@ -9,10 +10,12 @@ import 'package:bookingapp/widgets/normal_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+// ignore: must_be_immutable
 class Cart extends StatelessWidget {
   static const String myRoute = '/cart';
   @override
   Widget build(BuildContext context) {
+    mContext = context;
     BlocProvider.of<CartBloc>(context).add(CartLoadEvent());
     return Scaffold(
       backgroundColor: Colors.white,
@@ -39,8 +42,9 @@ class Cart extends StatelessWidget {
   Widget _buildBody(BuildContext context, CartDatas cartDatas) {
     return Column(
       children: <Widget>[
-        _buildHeaderSections(context,
-            cartCount: cartDatas.cartCount.toString()),
+        _buildHeaderSections(
+          context,
+        ),
         SizedBox(
           height: 15,
         ),
@@ -102,17 +106,13 @@ class Cart extends StatelessWidget {
               ),
               buildButton(
                   label: 'Proceed',
-                  onPrressed: proceed,
+                  onPressed: proceed,
                   width: MediaQuery.of(context).size.width - 30),
             ],
           ),
         )
       ],
     );
-  }
-
-  proceed() {
-    print("Added to cart");
   }
 
   Widget _buildError(BuildContext context, String text) {
@@ -132,7 +132,7 @@ class Cart extends StatelessWidget {
     );
   }
 
-  Widget _buildHeaderSections(BuildContext context, {String cartCount}) {
+  Widget _buildHeaderSections(BuildContext context) {
     return Row(
       children: <Widget>[
         SizedBox(
@@ -175,5 +175,10 @@ class Cart extends StatelessWidget {
         Expanded(child: showProductsLoadingShimmer()),
       ],
     );
+  }
+
+  BuildContext mContext;
+  proceed() {
+    Navigator.pushNamed(mContext, Address.myRoute);
   }
 }

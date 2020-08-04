@@ -237,7 +237,7 @@ class ProductDetail extends StatelessWidget {
             ),
             buildButton(
                 label: 'Add to cart',
-                onPrressed: addToCart,
+                onPressed: addToCart,
                 width: MediaQuery.of(context).size.width - 30),
             SizedBox(
               height: 15,
