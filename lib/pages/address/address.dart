@@ -284,21 +284,23 @@ class _AddressState extends State<Address> {
     _setLocation(_locationDetail.latitude, _locationDetail.longitude);
   }
 
-  Map<String, double> _locationData = new Map();
+  Map<String, dynamic> _locationData = new Map();
 
   _setLocation(double lat, double lon) async {
-    _locationData = await Navigator.push(
+    var tempLocationData = await Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => LocationPickMap(lat, lon),
       ),
     );
 
-    if (_locationData == null) {
+    if (tempLocationData == null) {
       return;
     }
 
-    _locationController.text = _locationData['latitude'].toString();
+    _locationData = tempLocationData;
+
+    _locationController.text = _locationData['name'];
   }
 
   submit() {

@@ -3,7 +3,7 @@ import 'package:bookingapp/pages/cart/bloc/data/cart_model.dart';
 class CartRepo {
   Future<CartDatas> getCartDatas() async {
     //FETCH FROM SERVER
-    await Future.delayed(Duration(milliseconds: 15));
+    await Future.delayed(Duration(milliseconds: 100));
 
     var jsonDecoded = {
       "cartCount": 3,

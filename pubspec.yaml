@@ -39,6 +39,8 @@ dependencies:
   path_provider: ^1.6.11
   flutter_google_places: ^0.2.6
   location: ^3.0.0
+  google_maps_flutter: ^0.5.28+1
+  geocoder: ^0.2.1
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +65,7 @@ flutter:
   assets:
     - assets/images/loading.gif
     - assets/images/belllab_logo.png
+    - assets/images/pin.png
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
