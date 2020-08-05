@@ -18,6 +18,7 @@ class LocationPickMap extends StatefulWidget {
 
 class _LocationPickMapState extends State<LocationPickMap> {
   final Map<String, dynamic> _locationData = new Map();
+  double zoom = 19.151926040649414;
 
   BitmapDescriptor pinLocationIcon;
   Set<Marker> _markers = {};
@@ -47,8 +48,10 @@ class _LocationPickMapState extends State<LocationPickMap> {
     });
 
     _currentLocation = CameraPosition(
+        bearing: 192.8334901395799,
+        tilt: 30.0,
         target: LatLng(_locationData['latitude'], _locationData['longitude']),
-        zoom: 19.151926040649414);
+        zoom: zoom);
 
     _getLocationName();
   }
@@ -151,6 +154,7 @@ class _LocationPickMapState extends State<LocationPickMap> {
       onCameraMove: (CameraPosition newCameraPosition) {
         _locationData['latitude'] = newCameraPosition.target.latitude;
         _locationData['longitude'] = newCameraPosition.target.longitude;
+        zoom = newCameraPosition.zoom;
       },
       onTap: (LatLng selectedLocation) => _setUpLocationChange(
           selectedLocation.latitude, selectedLocation.longitude),
@@ -166,8 +170,10 @@ class _LocationPickMapState extends State<LocationPickMap> {
     _locationData['longitude'] = lon;
 
     _currentLocation = CameraPosition(
+        tilt: 30.0,
+        bearing: 192.8334901395799,
         target: LatLng(_locationData['latitude'], _locationData['longitude']),
-        zoom: 19.151926040649414);
+        zoom: zoom);
 
     _markers = {};
 
