@@ -165,7 +165,7 @@ class Home extends StatelessWidget {
       children: <Widget>[
         Padding(
           padding: EdgeInsets.only(left: 15),
-          child: createNormalText('Good Evening!', boldText: true),
+          child: createNormalText('Hello Ayaan,', boldText: true),
         ),
         Padding(
           padding: EdgeInsets.only(left: 15, top: 3, bottom: 10),

@@ -65,11 +65,23 @@ class Cart extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  createNormalText('Quantity',
+                  createNormalText('Gross Amount',
                       size: AppTheme.fontSizeS,
                       color: AppTheme.secondaryBlackColor),
                   createNormalText(
-                    cartDatas.cartCount.toString(),
+                    convertToCurrency(cartDatas.total.toString()),
+                    size: AppTheme.fontSizeS,
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  createNormalText('VAT Amount',
+                      size: AppTheme.fontSizeS,
+                      color: AppTheme.secondaryBlackColor),
+                  createNormalText(
+                    convertToCurrency(cartDatas.total.toString()),
                     size: AppTheme.fontSizeS,
                   )
                 ],
@@ -92,7 +104,7 @@ class Cart extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  createNormalText('Total',
+                  createNormalText('Net Amount',
                       size: AppTheme.fontSizeS,
                       color: AppTheme.secondaryBlackColor),
                   createNormalText(
@@ -105,7 +117,7 @@ class Cart extends StatelessWidget {
                 height: 10,
               ),
               buildButton(
-                  label: 'Proceed',
+                  label: 'Proceed to Buy',
                   onPressed: proceed,
                   width: MediaQuery.of(context).size.width - 30),
             ],

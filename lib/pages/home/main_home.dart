@@ -1,3 +1,4 @@
+import 'package:bookingapp/pages/cart/cart.dart';
 import 'package:bookingapp/pages/home/bloc/home_bloc.dart';
 import 'package:bookingapp/pages/home/home.dart';
 import 'package:bookingapp/utility/app_theme.dart';
@@ -124,20 +125,26 @@ class _MainHomeState extends State<MainHome>
                     SizedBox(
                       height: 25,
                     ),
-                    Row(
-                      children: <Widget>[
-                        Icon(
-                          Icons.shopping_cart,
-                          color: AppTheme.secondaryGreenColor,
-                        ),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        createNormalText(
-                          'My Cart',
-                          color: Colors.white,
-                        )
-                      ],
+                    InkWell(
+                      onTap: () {
+                        drawerToggleFunction();
+                        Navigator.pushNamed(context, Cart.myRoute);
+                      },
+                      child: Row(
+                        children: <Widget>[
+                          Icon(
+                            Icons.shopping_cart,
+                            color: AppTheme.secondaryGreenColor,
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          createNormalText(
+                            'My Cart',
+                            color: Colors.white,
+                          )
+                        ],
+                      ),
                     ),
                     SizedBox(
                       height: 25,

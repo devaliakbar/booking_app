@@ -8,6 +8,7 @@ import 'package:bookingapp/pages/category/category.dart';
 import 'package:bookingapp/pages/home/bloc/data/home_repo.dart';
 import 'package:bookingapp/pages/home/bloc/home_bloc.dart';
 import 'package:bookingapp/pages/home/main_home.dart';
+import 'package:bookingapp/pages/payment_method/payment_methods.dart';
 import 'package:bookingapp/pages/product_detail/bloc/data/product_detail_repo.dart';
 import 'package:bookingapp/pages/product_detail/bloc/product_detail_bloc.dart';
 import 'package:bookingapp/pages/product_detail/product_detail.dart';
@@ -67,6 +68,7 @@ class MyApp extends StatelessWidget {
           ProductDetail.myRoute: (BuildContext context) => ProductDetail(),
           Cart.myRoute: (BuildContext context) => Cart(),
           Address.myRoute: (BuildContext context) => Address(),
+          PaymentMethods.myRoute: (BuildContext context) => PaymentMethods(),
         },
       ),
     );

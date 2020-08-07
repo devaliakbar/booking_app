@@ -1,5 +1,6 @@
 import 'package:bookingapp/main.dart';
 import 'package:bookingapp/pages/address/widgets/location_pick_map.dart';
+import 'package:bookingapp/pages/payment_method/payment_methods.dart';
 import 'package:bookingapp/utility/app_theme.dart';
 import 'package:bookingapp/utility/validator.dart';
 import 'package:bookingapp/widgets/build_button.dart';
@@ -61,7 +62,7 @@ class _AddressState extends State<Address> {
                       ),
                       Positioned(
                         right: 10,
-                        top: 11,
+                        top: 10,
                         child: Container(
                           height: 34,
                           width: 34,
@@ -105,20 +106,20 @@ class _AddressState extends State<Address> {
                     height: 15,
                   ),
                   buildTextField(
-                      label: "Address (Optional)",
-                      cFocusNode: _addressFocusNode,
-                      cController: _addressController,
-                      maxlength: 150,
-                      maxLine: 4,
+                      label: "Door No. / House No. (Optional)",
+                      cFocusNode: _landmarkFocusNode,
+                      cController: _landmarkController,
+                      maxlength: 50,
                       cValidator: onValidateAddressAndLandmark),
                   SizedBox(
                     height: 15,
                   ),
                   buildTextField(
-                      label: "Landmark (Optional)",
-                      cFocusNode: _landmarkFocusNode,
-                      cController: _landmarkController,
-                      maxlength: 50,
+                      label: "Delivery Note (Optional)",
+                      cFocusNode: _addressFocusNode,
+                      cController: _addressController,
+                      maxlength: 150,
+                      maxLine: 4,
                       cValidator: onValidateAddressAndLandmark),
                 ],
               ),
@@ -308,5 +309,6 @@ class _AddressState extends State<Address> {
       print('Validate Triggered');
       return;
     }
+    Navigator.pushNamed(context, PaymentMethods.myRoute);
   }
 }

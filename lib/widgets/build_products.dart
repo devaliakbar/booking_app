@@ -116,6 +116,7 @@ Widget _buildProduct(
                   products[index].name //+ ' / ' + products[index].brand
                   ,
                   truncate: true,
+                  boldText: true,
                   size: AppTheme.fontSizeXS),
             ),
           ),

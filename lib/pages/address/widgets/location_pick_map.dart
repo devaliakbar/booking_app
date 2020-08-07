@@ -48,8 +48,6 @@ class _LocationPickMapState extends State<LocationPickMap> {
     });
 
     _currentLocation = CameraPosition(
-        bearing: 192.8334901395799,
-        tilt: 30.0,
         target: LatLng(_locationData['latitude'], _locationData['longitude']),
         zoom: zoom);
 
@@ -170,8 +168,6 @@ class _LocationPickMapState extends State<LocationPickMap> {
     _locationData['longitude'] = lon;
 
     _currentLocation = CameraPosition(
-        tilt: 30.0,
-        bearing: 192.8334901395799,
         target: LatLng(_locationData['latitude'], _locationData['longitude']),
         zoom: zoom);
 
