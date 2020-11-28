@@ -15,6 +15,9 @@ import 'package:bookingapp/pages/product_detail/product_detail.dart';
 import 'package:bookingapp/pages/products/bloc/data/products_repo.dart';
 import 'package:bookingapp/pages/products/bloc/products_bloc.dart';
 import 'package:bookingapp/pages/products/products.dart';
+import 'package:bookingapp/pages/settings/bloc/data/settings_repo.dart';
+import 'package:bookingapp/pages/settings/bloc/settings_bloc.dart';
+import 'package:bookingapp/pages/settings/settings.dart';
 import 'package:bookingapp/pages/splash_screen/splash_screen.dart';
 
 import 'package:flutter/material.dart';
@@ -56,6 +59,11 @@ class MyApp extends StatelessWidget {
             return CartBloc(CartRepo());
           },
         ),
+        BlocProvider(
+          create: (BuildContext context) {
+            return SettingsBloc(SettingsRepo());
+          },
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -69,6 +77,7 @@ class MyApp extends StatelessWidget {
           Cart.myRoute: (BuildContext context) => Cart(),
           Address.myRoute: (BuildContext context) => Address(),
           PaymentMethods.myRoute: (BuildContext context) => PaymentMethods(),
+          Settings.myRoute: (BuildContext context) => Settings(),
         },
       ),
     );

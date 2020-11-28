@@ -3,7 +3,7 @@ import 'package:bookingapp/pages/home/bloc/data/home_model.dart';
 class HomeRepo {
   Future<HomePageDatas> getHomePageDatas() async {
 //FETCH FROM SERVER
-    await Future.delayed(Duration(milliseconds: 1500));
+    await Future.delayed(Duration(milliseconds: 1000));
 
     var jsonDecoded = {
       "bannersPath": [
@@ -13,37 +13,45 @@ class HomeRepo {
       ],
       "cartCount": 3,
       "categories": [
-        {"id": "1", "name": "Food", "imagePath": "https://belllab.co/ba/1.png"},
+        {
+          "id": "1",
+          "name": "Food",
+          "imagePath": "https://belllab.co/demo/img/1.png"
+        },
         {
           "id": "4",
           "name": "Fruits",
-          "imagePath": "https://belllab.co/ba/4.png"
+          "imagePath": "https://belllab.co/demo/img/4.png"
         },
         {
           "id": "2",
           "name": "Coffee",
-          "imagePath": "https://belllab.co/ba/2.png"
+          "imagePath": "https://belllab.co/demo/img/2.png"
         },
         {
           "id": "3",
           "name": "Fruits",
-          "imagePath": "https://belllab.co/ba/3.png"
+          "imagePath": "https://belllab.co/demo/img/3.png"
         },
-        {"id": "1", "name": "Food", "imagePath": "https://belllab.co/ba/1.png"},
+        {
+          "id": "1",
+          "name": "Food",
+          "imagePath": "https://belllab.co/demo/img/1.png"
+        },
         {
           "id": "4",
           "name": "Fruits",
-          "imagePath": "https://belllab.co/ba/4.png"
+          "imagePath": "https://belllab.co/demo/img/4.png"
         },
         {
           "id": "2",
           "name": "Coffee",
-          "imagePath": "https://belllab.co/ba/2.png"
+          "imagePath": "https://belllab.co/demo/img/2.png"
         },
         {
           "id": "3",
           "name": "Fruits",
-          "imagePath": "https://belllab.co/ba/3.png"
+          "imagePath": "https://belllab.co/demo/img/3.png"
         },
       ],
       "items": [

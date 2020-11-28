@@ -1,6 +1,7 @@
 import 'package:bookingapp/pages/cart/cart.dart';
 import 'package:bookingapp/pages/home/bloc/home_bloc.dart';
 import 'package:bookingapp/pages/home/home.dart';
+import 'package:bookingapp/pages/settings/settings.dart';
 import 'package:bookingapp/utility/app_theme.dart';
 import 'package:bookingapp/utility/statusbar_color.dart';
 import 'package:bookingapp/widgets/normal_text.dart';
@@ -127,8 +128,8 @@ class _MainHomeState extends State<MainHome>
                     ),
                     InkWell(
                       onTap: () {
-                        drawerToggleFunction();
                         Navigator.pushNamed(context, Cart.myRoute);
+                        drawerToggleFunction();
                       },
                       child: Row(
                         children: <Widget>[
@@ -149,20 +150,26 @@ class _MainHomeState extends State<MainHome>
                     SizedBox(
                       height: 25,
                     ),
-                    Row(
-                      children: <Widget>[
-                        Icon(
-                          Icons.settings,
-                          color: AppTheme.secondaryGreenColor,
-                        ),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        createNormalText(
-                          'Settings',
-                          color: Colors.white,
-                        )
-                      ],
+                    InkWell(
+                      child: Row(
+                        children: <Widget>[
+                          Icon(
+                            Icons.settings,
+                            color: AppTheme.secondaryGreenColor,
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          createNormalText(
+                            'Settings',
+                            color: Colors.white,
+                          )
+                        ],
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(context, Settings.myRoute);
+                        drawerToggleFunction();
+                      },
                     ),
                     SizedBox(
                       height: 70,
